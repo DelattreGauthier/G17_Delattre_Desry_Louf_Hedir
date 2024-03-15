@@ -10,7 +10,7 @@
   
   <body>
 		<!-- En-tête de la page -->
-		<?php include __DIR__ . '../../php/header.php'; ?>
+		<?php  include ('../../php/header.php'); ?>
 
 		<!-- Contenu principal -->
 		<main>
