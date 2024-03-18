@@ -10,7 +10,7 @@
 
   <body>
 		<!-- En-tête de la page -->
-		<?php  include ('../../php/header_EN.php'); ?>
+		<?php  include ('../../php/header_EN.php');  ?>
 
 		<!-- Contenu principal -->
 		<main>
