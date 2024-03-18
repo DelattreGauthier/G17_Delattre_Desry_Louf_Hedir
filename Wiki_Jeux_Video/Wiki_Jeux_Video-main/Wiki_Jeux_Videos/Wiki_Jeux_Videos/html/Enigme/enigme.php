@@ -11,37 +11,7 @@
 
 <body>
 	<!-- La balise body contient l'en-tête, le contenu principal et le pied de page de la page web. -->
-    <header>
-	<!-- L'en-tête de la page contient le titre du site et la navigation (liste des types de jeux et sélecteur de langue). -->
-        <h1><a href="../Accueil/accueil.php">Jeux d'Énigmes</a></h1>
-        <nav>
-		<!-- La navigation est composée d'une liste déroulante de types de jeux et d'un sélecteur de langue. -->
-            <ul class="menu">
-			<li>
-            <a class="liste" href="../Accueil/accueil.php">Types de Jeux <span>&#9662;</span></a>
-            <ul class="submenu">
-			<!-- La liste déroulante contient plusieurs catégories de jeux avec des liens correspondants. -->
-              <li><a href="../Aventures/aventures.php">Jeux d'Aventures</a></li>
-              <li><a href="../Simulation/simulation.php">Jeux de Simulation</a></li>
-              <li><a href="../FPS/fps.php">FPS</a></li>
-              <li><a href="../Arcade/arcade.php">Jeux d'Arcade</a></li>
-              <li><a href="../Enigme/enigme.php">Jeux d'Énigmes</a></li>
-              <li><a href="../Plateforme/plateforme.php">Jeux de Plateformes</a></li>
-                    </ul>
-                </li>
-            </ul>
-			<!-- Le sélecteur de langue est représenté par une icône de langue permettant de basculer vers la version anglaise du site. -->
-            <ul class="language">
-                <li>
-                    <a class="liste2" href="../Enigme/enigme_EN.php">
-                        <div class="photo_language">
-                            <img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <?php  include ('../../php/header.php'); ?>
     <main>
 	<!-- Le contenu principal de la page est divisé en sections de grille permettant d'avoir une page bien structuré -->
         <section class="grid-container">
