@@ -27,5 +27,9 @@
 						</a>
 				  </li>
 				</ul>
+				<div class="connexion">
+					<a class="connexion-button">Login</a>
+					<a class="sign-button">Register</a>
+				</div>
 		  </nav>
 		</header>
