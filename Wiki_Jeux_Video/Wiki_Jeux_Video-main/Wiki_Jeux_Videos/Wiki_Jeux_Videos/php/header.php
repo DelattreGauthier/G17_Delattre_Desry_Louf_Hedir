@@ -29,8 +29,8 @@
 		</ul>
 
 		<div class="connexion">
-			<a class="connexion-button" href="../../php/connection/log_in.php">Se Connecter</a>
-			<a class="sign-button" href="../../php/connection/sign_in.php">S'inscrire</a>
+			<a class="connexion-button" href="../../php/Connection/log_in.php">Se Connecter</a>
+			<a class="sign-button" href="../../php/Connection/sign_in.php">S'inscrire</a>
 		</div>
 
 	</nav>

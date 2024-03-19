@@ -33,7 +33,7 @@
                 <br><br>
 
                 <label for="pseudonyme">Pseudonyme (Obligatoire) :</label>
-                <input type="text" name="pseudonyme" id="pseudonyme" placeholder="Votre pseudonyme">
+                <input type="text" name="pseudonyme" id="pseudonyme" minlength="8" placeholder="Votre pseudonyme">
                 <br><br>
 
                 <label for="motdepasse">Mot de Passe (Plus de 8 caractères dont 1 chiffre minimum) :</label>
