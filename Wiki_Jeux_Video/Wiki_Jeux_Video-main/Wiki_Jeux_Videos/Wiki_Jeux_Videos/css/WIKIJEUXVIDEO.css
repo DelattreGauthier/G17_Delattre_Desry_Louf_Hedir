@@ -25,6 +25,10 @@ header {
   right: 10%;
   top: 30%;
 }
+.connexion a{
+  text-decoration: none;
+  color: white;
+}
 
 .sign-button{
   text-align: center;
@@ -491,7 +495,7 @@ img {
 
 /* Styles pour les éléments de formulaire */
 input[type=text],
-select,
+input[type=select],
 input[type=email],
 input[type=tel],
 input[type=file],
