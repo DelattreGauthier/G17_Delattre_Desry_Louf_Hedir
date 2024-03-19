@@ -29,7 +29,7 @@
 				</ul>
 				<div class="connexion">
 					<a class="connexion-button">Log in</a>
-					<a class="sign-button">Sign in</a>
+					<a class="sign-button">Register</a>
 				</div>
 		  </nav>
 		</header>
