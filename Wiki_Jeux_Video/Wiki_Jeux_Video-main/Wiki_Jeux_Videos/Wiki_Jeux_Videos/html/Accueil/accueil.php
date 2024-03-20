@@ -17,7 +17,7 @@
 		  <section class="grid-container">
 				<!-- Sections de grille avec titre, paragraphe et image illustrative -->
 				<div class="grid-item eltA">
-				  <h2>Axplorez différents types de jeux vidéo</h2>
+				  <h2>Explorez différents types de jeux vidéo</h2>
 				  <p>Notre site offre une variété de catégories de jeux, des aventures aux simulations, en passant par les FPS et bien plus encore.</p>
 				</div>
 				<div class="grid-item image1">

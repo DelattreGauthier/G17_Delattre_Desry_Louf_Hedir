@@ -25,10 +25,7 @@ header {
   right: 10%;
   top: 30%;
 }
-.connexion a{
-  text-decoration: none;
-  color: white;
-}
+
 
 .sign-button{
   text-align: center;
@@ -93,7 +90,17 @@ iframe {
   margin-bottom: 5px; /* Espace en bas pour les titres */
   text-align: center; /* Centre le texte des éléments h3 */
 }
+.probleme {
+  text-decoration : none;
+  color:#FF595A;
+}
 
+.probleme:hover {
+  text-decoration: none;
+  color:#be0000;
+}
+
+.connexion a,
 .contacter a,
 .a_propos a {
   text-decoration: none;
@@ -495,7 +502,7 @@ img {
 
 /* Styles pour les éléments de formulaire */
 input[type=text],
-input[type=select],
+select,
 input[type=email],
 input[type=tel],
 input[type=file],
