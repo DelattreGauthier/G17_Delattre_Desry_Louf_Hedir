@@ -11,6 +11,14 @@
   <body>
 		<!-- En-tête de la page -->
 		<?php  include ('../../php/header.php'); ?>
+		<!-- Sélecteur de langue -->
+		<div class="language">
+    		<a href="../Accueil/accueil_EN.php" class="photo_language">
+        		<div class="photo_language">
+            		<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
+        		</div>
+    		</a>
+		</div>
 
 		<!-- Contenu principal -->
 		<main>

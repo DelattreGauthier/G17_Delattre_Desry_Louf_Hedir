@@ -17,19 +17,11 @@
 						</ul>
 				  </li>
 				</ul>
-				<!-- Sélecteur de langue -->
-				<ul class="language">
-				  <li>
-						<a class="liste2" href="../Accueil/accueil.php">
-						  <div class="photo_language">
-							<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
-						  </div>
-						</a>
-				  </li>
-				</ul>
+				
+				
 				<div class="connexion">
-					<a class="connexion-button">Log in</a>
-					<a class="sign-button">Register</a>
+					<a class="connexion-button" href="../Connexion/log_in_EN.php">Log in</a>
+					<a class="sign-button" href="../Connexion/sign_in_EN.php">Register</a>
 				</div>
 		  </nav>
 		</header>

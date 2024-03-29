@@ -12,6 +12,14 @@
 <body>
 	<!-- La balise body contient l'en-tête, le contenu principal et le pied de page de la page web. -->
     <?php  include ('../../php/header.php'); ?>
+    <div class="language">
+    	<a href="../Enigme/enigme_EN.php" class="photo_language">
+        	<div class="photo_language">
+            	<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
+        	</div>
+    	</a>
+	</div>
+
     <main>
 	<!-- Le contenu principal de la page est divisé en sections de grille permettant d'avoir une page bien structuré -->
         <section class="grid-container">

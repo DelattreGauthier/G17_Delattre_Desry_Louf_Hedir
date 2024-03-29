@@ -11,7 +11,13 @@
   <body>
   <!-- La balise body contient l'en-tête, le contenu principal et le pied de page de la page web. -->
   <?php  include ('../../php/header_EN.php'); ?>
-
+  <div class="language">
+    	<a href="../Contact/contact.php" class="photo_language">
+        	<div class="photo_language">
+            	<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
+        	</div>
+    	</a>
+	</div>
     <main id="contact">
         <form class="formLetter" method="post" action="../Accueil/accueil.php">
             <fieldset>  <!-- la balise fieldset peut être utilisé pour regrouper un ensemble de champs -->

@@ -17,16 +17,7 @@
 				</ul>
 			</li>
 		</ul>
-		<!-- Sélecteur de langue -->
-		<ul class="language">
-			<li>
-				<a class="liste2" href="../Accueil/accueil_EN.php">
-					<div class="photo_language">
-					<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
-					</div>
-				</a>
-			</li>
-		</ul>
+		
 
 		<div class="connexion">
 			<a class="connexion-button" href="../Connexion/log_in.php">Se Connecter</a>

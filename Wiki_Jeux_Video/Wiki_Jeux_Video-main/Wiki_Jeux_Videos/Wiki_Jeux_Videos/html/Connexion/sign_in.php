@@ -3,7 +3,7 @@
   <head>
     <!-- Les éléments meta et link dans la balise head sont utilisés pour définir les métadonnées de la page et lier le CSS et l'icône du site. -->
     <meta charset="UTF-8">
-    <title>Wiki Jeux Vidéo - Contact</title>
+    <title>Wiki Jeux Vidéo - S'inscrire</title>
     <link rel="stylesheet" href="../../css/WIKIJEUXVIDEO.css">
     <link rel="icon" type="image/x-icon" href="../../photo/FonctionnementduSite/logo.png">
   </head>
@@ -11,6 +11,13 @@
   <body>
     <!-- La balise body contient l'en-tête, le contenu principal et le pied de page de la page web. -->
     <?php  include ('../../php/header.php'); ?>
+    <div class="language">
+    		<a href="../Connexion/sign_in_EN.php" class="photo_language">
+        		<div class="photo_language">
+            		<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
+        		</div>
+    		</a>
+		</div>
 
     <main id="contact">
       <form class="formLetter" method="post" action="../../Accueil/accueil.php">
