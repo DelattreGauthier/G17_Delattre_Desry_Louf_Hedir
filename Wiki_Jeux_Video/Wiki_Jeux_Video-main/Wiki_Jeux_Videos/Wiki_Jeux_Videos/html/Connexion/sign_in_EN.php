@@ -21,7 +21,7 @@
 
 
     <main id="contact">
-      <form class="formLetter" method="post" action="../../Accueil/accueil_EN.php">
+      <form class="formLetter" method="post" action="ajouter.php">
             <fieldset>  <!-- la balise fieldset peut être utilisé pour regrouper un ensemble de champs -->
                 <legend>Sign in :</legend>
                 <label for="nom">Last Name<span style="color: red; font-weight: bold;">*</span> :</label >
@@ -53,7 +53,7 @@
                 <input type="file" id="document" required name="document">
                 <br><br>
                 <div class="contact_button">
-                    <input type="submit" name="Create" id="soumission" value="Sign in">
+                    <input type="submit" name="sign_in" id="soumission" value="Sign in">
                     <input type="reset" value="Reset">
                 </div>
             </fieldset>

@@ -20,7 +20,7 @@
 		</div>
 
     <main id="contact">
-      <form class="formLetter" method="post" action="../../Accueil/accueil.php">
+      <form class="formLetter" method="post" action="ajouter.php">
             <fieldset>  <!-- la balise fieldset peut être utilisé pour regrouper un ensemble de champs -->
                 <legend>S'inscrire :</legend>
                 <label for="nom">Nom<span style="color: red; font-weight: bold;">*</span> :</label >
@@ -32,7 +32,7 @@
                 <br><br>
                 
                 <label for="email">Courriel<span style="color: red; font-weight: bold;">*</span> : </label >
-                <input type="email" name="courriel" id="email" pattern="^[a-zA-Z.\-]+@[a-zA-Z.]*(\.[a-z]{2,3})$" placeholder="Votre email" required>
+                <input type="email" name="courriel" id="email" pattern="^[a-zA-Z0-9.\-]+@[a-zA-Z.]*(\.[a-z]{2,3})$" placeholder="Votre email" required>
                 <br><br>
 
                 <label for="telephone">Téléphone<span style="color: red; font-weight: bold;">*</span> : </label>
@@ -52,7 +52,7 @@
                 <input type="file" id="document" required name="document">
                 <br><br>
                 <div class="contact_button">
-                  <input type="submit" name="Create" id="soumission" value="Inscription">
+                  <input type="submit"  name="sign_in" id="soumission" value="Inscription">
                   <input type="reset">
                 </div>
             </fieldset>

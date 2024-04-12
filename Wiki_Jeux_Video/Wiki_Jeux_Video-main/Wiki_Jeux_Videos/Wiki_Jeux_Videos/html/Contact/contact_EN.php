@@ -21,7 +21,7 @@
     <main id="contact">
         <form class="formLetter" method="post" action="../Accueil/accueil.php">
             <fieldset>  <!-- la balise fieldset peut être utilisé pour regrouper un ensemble de champs -->
-                <legend>Your Information:</legend>
+                <legend>Your Information <span style="color: red; font-weight: bold;">*</span>:</legend>
                 
                 <div class="genre">
                   <input type="radio" name="genre" id="mme" required>
@@ -34,29 +34,29 @@
 
                 <br><br> <!-- La balise br sert à effectuer un retour à la ligne-->
                 
-                <label for="nom">Last Name (Required):</label >
+                <label for="nom">Last Name <span style="color: red; font-weight: bold;">*</span>:</label >
                 <input type="text" name="nom" id="nom" placeholder="Your Surname" required>
                 <br><br>
                 
-                <label for="prenom">First Name (Required):</label >
+                <label for="prenom">First Name <span style="color: red; font-weight: bold;">*</span>:</label >
                 <input type="text" name="prenom" id="prenom" placeholder="Your First Name" required>
                 <br><br>
                 
-                <label for="email">Email (Required):</label >
+                <label for="email">Email <span style="color: red; font-weight: bold;">*</span>:</label >
                 <input type="email" name="courriel" id="email" placeholder="Your Email" required>
                 <br><br>
 
-                <label for="telephone">Phone (Required):</label>
+                <label for="telephone">Phone <span style="color: red; font-weight: bold;">*</span>:</label>
                 <input type="tel" name="telephone" id="telephone" placeholder="Your Phone Number" required>
                 <br><br>
 
-                <label for="pseudonyme">Username (Required for comments):</label>
+                <label for="pseudonyme">Username :</label>
                 <input type="text" name="pseudonyme" id="pseudonyme" placeholder="Your Username">
             </fieldset>
             
             <fieldset>
-                <legend>Your Request :</legend>
-                <label for="objet">Message Subject:</label>
+                <legend>Your Request  <span style="color: red; font-weight: bold;">*</span>:</legend>
+                <label for="objet">Message Subject :</label>
                 <select id="objet" name="objet">
                     <option value="0">- Select -</option>
                     <option value="sugg">Suggestions</option>
@@ -66,12 +66,12 @@
                 
                 <br><br>
           
-                <label for="description">Message (Required):</label>
+                <label for="description">Message <span style="color: red; font-weight: bold;">*</span>:</label>
                 <br>
                 <textarea rows="10" cols="50" name="description" id="description" required minlength="50"></textarea>
                 <br><br>
                 
-                <label for="document">Attachment (Optional):</label>
+                <label for="document">Attachment :</label>
                 <input type="file" id="document" name="document">
                 <br><br>
                 <div class="contact_button">

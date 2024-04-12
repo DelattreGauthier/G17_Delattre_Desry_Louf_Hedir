@@ -20,7 +20,7 @@
 	</div>
 
     <main id="contact">
-      <form class="formLetter" method="post" action="../../Accueil/accueil_EN.php">
+      <form class="formLetter" method="post" action="identification.php">
             <fieldset>  <!-- la balise fieldset peut être utilisé pour regrouper un ensemble de champs -->
                 <legend>Log in :</legend>
               
@@ -34,7 +34,7 @@
                 <br>
 
                 <div class="contact_button">
-                  <input type="submit" name="Envoyer" id="soumission" value="Log in">
+                  <input type="submit" name="log_in_EN" id="soumission" value="Log in">
                 </div>
 
                 

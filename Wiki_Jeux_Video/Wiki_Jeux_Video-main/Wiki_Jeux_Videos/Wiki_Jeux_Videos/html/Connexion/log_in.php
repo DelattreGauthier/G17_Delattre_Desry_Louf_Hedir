@@ -1,3 +1,28 @@
+<?php
+
+	session_start();
+
+	//Script du traitement du formulaire d'authentification
+	if(isset($_POST["log_in"])){
+		$login=$_POST['courriel'];
+		$mdp=$_POST['motdepasse'];
+		
+		if(!$login=="admin.roux@platipus.com" && !$mdp=="patate_bleu47"){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
+			$_SESSION["nom"]=$login; //Variable de session "nom"
+			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
+			$_SESSION["admin"]=false; //Variable de session "admin"
+
+		}
+		else if ($login=="admin.roux@platipus.com" && $mdp=="patate_bleu47"){//si utilisateur Admin
+			$_SESSION["nom"]=$login;//Variable de session "nom"
+			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
+			$_SESSION["admin"]=true;//Variable de session "admin"
+
+		}
+	}	  
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -20,7 +45,7 @@
 		</div>
 
     <main id="contact">
-      <form class="formLetter" method="post" action="../../Accueil/accueil.php">
+      <form class="formLetter" method="post" action="">
             <fieldset>  <!-- la balise fieldset peut être utilisé pour regrouper un ensemble de champs -->
                 <legend>Se connecter :</legend>
               
@@ -34,7 +59,7 @@
                 <br>
 
                 <div class="contact_button">
-                  <input type="submit" name="Envoyer" id="soumission" value="Connexion">
+                  <input type="submit" name="log_in" id="soumission" value="Connexion">
                 </div>
 
                 
