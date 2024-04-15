@@ -10,6 +10,15 @@
   <body>
 	<!-- La balise body contient l'en-tête, le contenu principal et le pied de page de la page web. -->
 	<?php  include ('../../php/header.php'); ?>
+	<header>
+			<input type="checkbox" id="videoToggle">
+				<label for="videoToggle">Easter Egg</label>
+				<div id="videoContainer">
+				<video autoplay loop muted>
+					<source src="../../photo/Arcade/EasterEgg/Easter_Egg_Pac_Man.mp4" type="video/mp4">
+				</video>
+				</div>
+	</header>
 	<div class="language">
     	<a href="../Arcade/arcade_EN.php" class="photo_language">
         	<div class="photo_language">

@@ -17,6 +17,16 @@
         		</div>
     		</a>
 		</div>
+		<header>
+			<input type="checkbox" id="videoToggle">
+				<label for="videoToggle">Easter Egg</label>
+				<div id="videoContainer">
+				<video autoplay loop muted>
+					<source src="../../photo/Arcade/EasterEgg/Easter_Egg_Pac_Man.mp4" type="video/mp4">
+				</video>
+				</div>
+		</header>
+		
 
 		<!-- Contenu principal -->
 		<main>

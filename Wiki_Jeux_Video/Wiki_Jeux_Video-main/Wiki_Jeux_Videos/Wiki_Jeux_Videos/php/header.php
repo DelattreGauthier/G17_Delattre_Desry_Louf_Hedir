@@ -1,9 +1,5 @@
 <?php 
-
-	//Exercice 2 : QUESTION 4	
 	session_start(); //Démarrer la session
-
-
 ?>
 
 <header>
@@ -29,7 +25,10 @@
 		<?php
 			if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true &&  $_SESSION["admin"]==true){ // si un utilisateur est authentifié
 		?>
-
+		<div class="connexion">
+			<a class="connexion-button" href="../Connexion/log_out.php">Déconnexion</a>
+		</div>
+			
 		<?php
 			}
 			else{ // sinon on affiche le formulaire

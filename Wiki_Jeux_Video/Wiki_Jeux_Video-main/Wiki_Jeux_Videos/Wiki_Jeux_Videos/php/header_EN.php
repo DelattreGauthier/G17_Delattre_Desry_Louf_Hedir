@@ -1,3 +1,7 @@
+<?php 
+	session_start(); //Démarrer la session
+?>
+
 <header>
 		  <!-- Titre du site et navigation -->
 		  <h1><a href="../Accueil/accueil_EN.php">Video Game Wiki</a></h1>
@@ -18,10 +22,25 @@
 				  </li>
 				</ul>
 				
+		<?php
+			if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true &&  $_SESSION["admin"]==true){ // si un utilisateur est authentifié
+		?>
+		<div class="connexion">
+			<a class="connexion-button" href="../Connexion/log_out.php">Log out</a>
+		</div>
+			
+		<?php
+			}
+			else{ // sinon on affiche le formulaire
+		
+		?>	
+		<div class="connexion">
+				<a class="connexion-button" href="../Connexion/log_in_EN.php">Log in</a>
+				<a class="sign-button" href="../Connexion/sign_in_EN.php">Register</a>
+		</div>
+		<?php
+			}
+		?>
 				
-				<div class="connexion">
-					<a class="connexion-button" href="../Connexion/log_in_EN.php">Log in</a>
-					<a class="sign-button" href="../Connexion/sign_in_EN.php">Register</a>
-				</div>
-		  </nav>
-		</header>
+	</nav>
+</header>

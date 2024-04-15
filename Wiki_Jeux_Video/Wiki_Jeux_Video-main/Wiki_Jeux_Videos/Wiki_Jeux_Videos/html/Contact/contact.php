@@ -59,7 +59,6 @@
                     <option value="0">- Sélectionner -</option>
                     <option value="sugg">Suggestions</option>
                     <option value="prob">Problèmes techniques</option>
-                    <option value="com">Commentaires</option>
                 </select>
                 
                 <br><br>

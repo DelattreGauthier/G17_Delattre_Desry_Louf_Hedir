@@ -705,8 +705,8 @@ input[type=file] {
 /* Étiquette pour le contrôle de la vidéo */
 label[for=videoToggle] {
   position: absolute; /* Position absolue pour l'étiquette videoToggle */
-  top: 25%;
-  left: 50%;
+  top: 80%;
+  left: 47.75%;
   width: 10em;
   transform: translateX(-50%);
   display: block;

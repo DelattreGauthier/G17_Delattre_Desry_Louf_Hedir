@@ -61,7 +61,6 @@
                     <option value="0">- Select -</option>
                     <option value="sugg">Suggestions</option>
                     <option value="prob">Technical Issues</option>
-                    <option value="com">Comments</option>
                 </select>
                 
                 <br><br>

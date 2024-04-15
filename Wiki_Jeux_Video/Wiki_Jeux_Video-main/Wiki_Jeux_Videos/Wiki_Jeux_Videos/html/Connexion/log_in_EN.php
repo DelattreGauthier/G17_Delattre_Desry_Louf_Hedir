@@ -1,3 +1,29 @@
+<?php
+
+	session_start();
+
+	//Script du traitement du formulaire d'authentification
+	if(isset($_POST["log_in"])){
+		$login=$_POST['courriel'];
+		$mdp=$_POST['motdepasse'];
+
+		if(!$login=="admin.roux@platipus.com" && !$mdp=="patate_bleu47"){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
+			$_SESSION["nom"]=$login; //Variable de session "nom"
+			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
+			$_SESSION["admin"]=false; //Variable de session "admin"
+      header("Location:../Accueil/accueil_EN.php");
+		}
+		else if ($login=="admin.roux@platipus.com" && $mdp=="patate_bleu47"){//si utilisateur Admin
+			$_SESSION["nom"]=$login;//Variable de session "nom"
+			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
+			$_SESSION["admin"]=true;//Variable de session "admin"
+      header("Location:../Accueil/accueil_EN.php");
+      
+		}
+	}	  
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -20,12 +46,12 @@
 	</div>
 
     <main id="contact">
-      <form class="formLetter" method="post" action="identification.php">
+      <form class="formLetter" method="post" action="">
             <fieldset>  <!-- la balise fieldset peut être utilisé pour regrouper un ensemble de champs -->
                 <legend>Log in :</legend>
               
                 <label for="email">Mail : </label >
-                <input type="email" name="courriel" id="email"  pattern="^[a-zA-Z.\-]+@[a-zA-Z.]*(\.[a-z]{2,3})$" placeholder="Your mail" required>
+                <input type="email" name="courriel" id="email"  pattern="^[a-zA-Z0-9.\-]+@[a-zA-Z.]*(\.[a-z]{2,3})$" placeholder="Your mail" required>
                 <br><br>
 
                 <label for="motdepasse">Password : </label>
@@ -34,7 +60,7 @@
                 <br>
 
                 <div class="contact_button">
-                  <input type="submit" name="log_in_EN" id="soumission" value="Log in">
+                  <input type="submit" name="log_in" id="soumission" value="Log in">
                 </div>
 
                 

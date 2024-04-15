@@ -33,7 +33,7 @@
                 <br><br>
                 
                 <label for="email">Mail<span style="color: red; font-weight: bold;">*</span> : </label >
-                <input type="email" name="courriel" id="email" pattern="^[a-zA-Z.\-]+@[a-zA-Z.]*(\.[a-z]{2,3})$" placeholder="Your mail" required>
+                <input type="email" name="courriel" id="email" pattern="^[a-zA-Z0-9.\-]+@[a-zA-Z.]*(\.[a-z]{2,3})$" placeholder="Your mail" required>
                 <br><br>
 
                 <label for="telephone">Phone Number<span style="color: red; font-weight: bold;">*</span> : </label>

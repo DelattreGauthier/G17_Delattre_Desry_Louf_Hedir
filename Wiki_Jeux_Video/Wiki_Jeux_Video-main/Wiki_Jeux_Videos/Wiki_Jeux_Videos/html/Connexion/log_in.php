@@ -6,18 +6,19 @@
 	if(isset($_POST["log_in"])){
 		$login=$_POST['courriel'];
 		$mdp=$_POST['motdepasse'];
-		
 		if(!$login=="admin.roux@platipus.com" && !$mdp=="patate_bleu47"){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
-			$_SESSION["nom"]=$login; //Variable de session "nom"
+      $_SESSION["nom"]=$login; //Variable de session "nom"
 			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
 			$_SESSION["admin"]=false; //Variable de session "admin"
-
+      header("Location:../Accueil/accueil.php");
+      
 		}
 		else if ($login=="admin.roux@platipus.com" && $mdp=="patate_bleu47"){//si utilisateur Admin
 			$_SESSION["nom"]=$login;//Variable de session "nom"
 			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
 			$_SESSION["admin"]=true;//Variable de session "admin"
-
+      header("Location:../Accueil/accueil.php");
+      
 		}
 	}	  
 
@@ -50,7 +51,7 @@
                 <legend>Se connecter :</legend>
               
                 <label for="email">Courriel : </label >
-                <input type="email" name="courriel" id="email"  pattern="^[a-zA-Z.\-]+@[a-zA-Z.]*(\.[a-z]{2,3})$" placeholder="Votre email" required>
+                <input type="email" name="courriel" id="email"  pattern="^[a-zA-Z0-9.\-]+@[a-zA-Z.]*(\.[a-z]{2,3})$" placeholder="Votre email" required>
                 <br><br>
 
                 <label for="motdepasse">Mot de Passe : </label>
