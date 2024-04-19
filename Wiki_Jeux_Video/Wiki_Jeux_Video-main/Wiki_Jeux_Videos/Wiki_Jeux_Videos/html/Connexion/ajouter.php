@@ -5,8 +5,8 @@
 		try{
 			require("connexion.php");               
 			
-			$reqPrep="INSERT INTO account(Nom,Prenom,Courriel,Telephone,Pseudonyme,Mot_de_Passe,Photo_de_Profil)
-						VALUES (:nom,:prenom,:courriel,:tel,:pseudo,:mdp,:photo)";//La requere SQL SELECT
+			$reqPrep="INSERT INTO account(Nom,Prenom,Courriel,Telephone,Pseudonyme,Mot_de_Passe)
+						VALUES (:nom,:prenom,:courriel,:tel,:pseudo,:mdp)";//La requere SQL SELECT
 				
 			$req = $conn->prepare($reqPrep);//Préparer la requete
             
@@ -16,13 +16,12 @@
 			$tel=$_POST["telephone"];
             $pseudo=$_POST["pseudonyme"];
             $mdp=$_POST["motdepasse"];
-            $photo=$_POST["document"];  
 
-			$reqTab=array(":nom"=>$nom,":prenom"=>$prenom,":courriel"=>$courriel,":tel"=>$tel,":pseudo"=>$pseudo,":mdp"=>$mdp,":photo"=>$photo);
+
+			$reqTab=array(":nom"=>$nom,":prenom"=>$prenom,":courriel"=>$courriel,":tel"=>$tel,":pseudo"=>$pseudo,":mdp"=>$mdp);
 			$req->execute($reqTab);//Executer la requete
+
 			
-            
-			$conn= NULL;
 
             header("Location:../Accueil/accueil.php");
 		}                 

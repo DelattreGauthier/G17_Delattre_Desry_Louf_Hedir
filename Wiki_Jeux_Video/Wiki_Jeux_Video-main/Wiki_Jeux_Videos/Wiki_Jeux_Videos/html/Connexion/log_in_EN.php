@@ -39,9 +39,9 @@
       header("Location:../Accueil/accueil_EN.php");
       
 		}
-    else {
+    else if ($mdp!=$resultat["Mot_de_Passe"]) {
       session_destroy();
-      echo"<h2 style='text-align: center;   color: #FF595A;'>The address or password is incorrect</h2>";
+      echo"<h2 style='text-align: center; color: #FF595A;'>L'adresse ou le mot de passe est incorrect</h2>";
     }
 	}	  
 

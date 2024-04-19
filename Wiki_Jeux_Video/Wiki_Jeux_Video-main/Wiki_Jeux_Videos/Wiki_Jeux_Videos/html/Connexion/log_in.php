@@ -19,7 +19,7 @@
     catch(Exception $e){
       die("Erreur : " . $e->getMessage());
     }
-		
+
 		if($login==$resultat[0]["Courriel"] && $mdp==$resultat[0]["Mot_de_Passe"]){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
       $_SESSION["nom"]=$login; //Variable de session "nom"
 			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
@@ -40,8 +40,8 @@
       
 		}
     else {
-      session_destroy();
       echo"<h2 style='text-align: center; color: #FF595A;'>L'adresse ou le mot de passe est incorrect</h2>";
+      session_destroy();
     }
 	}	  
 
