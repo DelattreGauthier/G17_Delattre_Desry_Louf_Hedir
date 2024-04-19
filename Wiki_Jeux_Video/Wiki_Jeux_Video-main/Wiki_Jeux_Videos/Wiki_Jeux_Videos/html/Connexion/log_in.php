@@ -6,14 +6,14 @@
 	if(isset($_POST["log_in"])){
 		$login=$_POST['courriel'];
 		$mdp=$_POST['motdepasse'];
-		if(!$login=="admin.roux@platipus.com" && !$mdp=="patate_bleu47"){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
+		if(!$login=="admin.wiki@jeux.videos.com" && !$mdp=="123Admin123"){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
       $_SESSION["nom"]=$login; //Variable de session "nom"
 			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
 			$_SESSION["admin"]=false; //Variable de session "admin"
       header("Location:../Accueil/accueil.php");
       
 		}
-		else if ($login=="admin.roux@platipus.com" && $mdp=="patate_bleu47"){//si utilisateur Admin
+		else if ($login=="admin.wiki@jeux.videos.com" && $mdp=="123Admin123"){//si utilisateur Admin
 			$_SESSION["nom"]=$login;//Variable de session "nom"
 			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
 			$_SESSION["admin"]=true;//Variable de session "admin"
