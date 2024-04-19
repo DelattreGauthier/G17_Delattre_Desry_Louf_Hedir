@@ -49,8 +49,6 @@
             </fieldset>
             
             <fieldset> 
-                <label for="document">Profile picture <span style="color: red; font-weight: bold;">*</span>: </label>
-                <input type="file" id="document" required name="document">
                 <br><br>
                 <div class="contact_button">
                     <input type="submit" name="sign_in" id="soumission" value="Sign in">

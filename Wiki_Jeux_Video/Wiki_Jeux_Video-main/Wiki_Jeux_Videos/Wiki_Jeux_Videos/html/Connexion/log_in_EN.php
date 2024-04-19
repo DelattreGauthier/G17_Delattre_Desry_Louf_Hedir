@@ -1,25 +1,48 @@
 <?php
-
 	session_start();
-
+  
 	//Script du traitement du formulaire d'authentification
 	if(isset($_POST["log_in"])){
-		$login=$_POST['courriel'];
+    $login=$_POST['courriel'];
 		$mdp=$_POST['motdepasse'];
+    try{
+      require("../Connexion/connexion.php");               
+      
+      $reqPrep = "SELECT DISTINCT Courriel,Mot_de_Passe FROM account WHERE  Courriel='".$login."'";
+        
+      $req = $conn->prepare($reqPrep);
+      $req->execute();
+      $resultat=$req->fetchALL(PDO::FETCH_ASSOC);
+      $conn= NULL;
 
-		if(!$login=="admin.roux@platipus.com" && !$mdp=="patate_bleu47"){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
-			$_SESSION["nom"]=$login; //Variable de session "nom"
+    }                 
+    catch(Exception $e){
+      die("Erreur : " . $e->getMessage());
+    }
+		
+		if($login==$resultat[0]["Courriel"] && $mdp==$resultat[0]["Mot_de_Passe"]){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
+      $_SESSION["nom"]=$login; //Variable de session "nom"
 			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
-			$_SESSION["admin"]=false; //Variable de session "admin"
-      header("Location:../Accueil/accueil_EN.php");
+      if ($login=="admin.wiki@jeux.videos.com" && $mdp=="123Admin123"){//si utilisateur Admin
+        $_SESSION["admin"]=true;//Variable de session "admin"
+      }
+      else{
+        $_SESSION["admin"]=false; //Variable de session "admin"
+      }
+			
+      header("Location:../Accueil/accueil_EN.php"); 
 		}
-		else if ($login=="admin.roux@platipus.com" && $mdp=="patate_bleu47"){//si utilisateur Admin
+		else if ($login=="admin.wiki@jeux.videos.com" && $mdp=="123Admin123"){//si utilisateur Admin
 			$_SESSION["nom"]=$login;//Variable de session "nom"
 			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
 			$_SESSION["admin"]=true;//Variable de session "admin"
       header("Location:../Accueil/accueil_EN.php");
       
 		}
+    else {
+      session_destroy();
+      echo"<h2 style='text-align: center;   color: #FF595A;'>The address or password is incorrect</h2>";
+    }
 	}	  
 
 ?>

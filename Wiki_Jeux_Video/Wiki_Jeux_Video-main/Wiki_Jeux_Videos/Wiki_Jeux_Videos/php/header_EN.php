@@ -4,6 +4,26 @@
 
 <header>
 		  <!-- Titre du site et navigation -->
+		<?php
+			if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true) { // si un utilisateur est authentifié
+				try{
+					require("../Connexion/connexion.php");               
+					
+					$reqPrep = "SELECT DISTINCT Pseudonyme FROM account WHERE  Courriel='".$_SESSION["nom"]."'";
+						
+					$req = $conn->prepare($reqPrep);
+					$req->execute();
+					$resultat=$req->fetchALL(PDO::FETCH_ASSOC);
+					echo"<h1>Hello ".$resultat[0]["Pseudonyme"]."</h1>";
+
+					$conn= NULL;
+
+				}                 
+				catch(Exception $e){
+					die("Erreur : " . $e->getMessage());
+				}
+			}
+		?>
 		  <h1><a href="../Accueil/accueil_EN.php">Video Game Wiki</a></h1>
 		  <nav>
 				<!-- Navigation : Liste des types de jeux et sélecteur de langue -->
@@ -23,7 +43,7 @@
 				</ul>
 				
 		<?php
-			if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true &&  $_SESSION["admin"]==true){ // si un utilisateur est authentifié
+			if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true){ // si un utilisateur est authentifié
 		?>
 		<div class="connexion">
 			<a class="connexion-button" href="../Connexion/log_out.php">Log out</a>
