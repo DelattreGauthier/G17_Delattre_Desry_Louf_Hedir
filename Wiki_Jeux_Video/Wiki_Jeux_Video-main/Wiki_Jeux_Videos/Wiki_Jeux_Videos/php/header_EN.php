@@ -14,7 +14,7 @@
 					$req = $conn->prepare($reqPrep);
 					$req->execute();
 					$resultat=$req->fetchALL(PDO::FETCH_ASSOC);
-					echo"<h1>Hello ".$resultat[0]["Pseudonyme"]."</h1>";
+					echo"<h1 style='text-align: center; color: #FF595A;'>Hello ".$resultat[0]["Pseudonyme"]."</h1>";
 
 					$conn= NULL;
 

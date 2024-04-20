@@ -23,7 +23,7 @@
 
 			
 
-            header("Location:../Accueil/accueil.php");
+            header("Location:log_in.php");
 		}                 
 		catch(Exception $e){
 			die("Erreur : " . $e->getMessage());

@@ -14,7 +14,7 @@
 				$req = $conn->prepare($reqPrep);
 				$req->execute();
 				$resultat=$req->fetchALL(PDO::FETCH_ASSOC);
-				echo"<h1>Bonjour ".$resultat[0]["Pseudonyme"]."</h1>";
+				echo"<h1 style='text-align: center; color: #FF595A;'>Bonjour ".$resultat[0]["Pseudonyme"]."</h1>";
 
 				$conn= NULL;
 
@@ -48,7 +48,7 @@
 		<div class="connexion">
 			
 		<a href="../Profil/profil.php">
-    		<img src="../photo/Profil/User.png" alt="Profil">
+			<img src="../../photo/Profil/User_1.png" alt="Profil" style="margin-top:-45px;">
 		</a>
 
 
