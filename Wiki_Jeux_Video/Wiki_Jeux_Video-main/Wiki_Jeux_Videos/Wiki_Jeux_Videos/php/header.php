@@ -13,8 +13,8 @@
 					
 				$req = $conn->prepare($reqPrep);
 				$req->execute();
-				$resultat=$req->fetchALL(PDO::FETCH_ASSOC);
-				echo"<h1 style='text-align: center; color: #FF595A;'>Bonjour ".$resultat[0]["Pseudonyme"]."</h1>";
+				$salutation=$req->fetchALL(PDO::FETCH_ASSOC);
+				echo"<h1 style='text-align: center; color: #FF595A;'>Bonjour ".$salutation[0]["Pseudonyme"]."</h1>";
 
 				$conn= NULL;
 
