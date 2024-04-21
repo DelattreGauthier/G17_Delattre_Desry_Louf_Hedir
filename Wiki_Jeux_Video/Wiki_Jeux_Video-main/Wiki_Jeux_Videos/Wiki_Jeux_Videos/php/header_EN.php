@@ -4,27 +4,29 @@
 
 <header>
 		  <!-- Titre du site et navigation -->
-		<?php
-			if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true) { // si un utilisateur est authentifié
-				try{
-					require("../Connexion/connexion.php");               
+	<?php
+		if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true) { // si un utilisateur est authentifié
+			try{
+				require("../Connexion/connexion.php");               
+				
+				$reqPrep = "SELECT DISTINCT Pseudonyme FROM account WHERE  Courriel='".$_SESSION["nom"]."'";
 					
-					$reqPrep = "SELECT DISTINCT Pseudonyme FROM account WHERE  Courriel='".$_SESSION["nom"]."'";
-						
-					$req = $conn->prepare($reqPrep);
-					$req->execute();
-					$resultat=$req->fetchALL(PDO::FETCH_ASSOC);
-					echo"<h1 style='text-align: center; color: #FF595A;'>Hello ".$resultat[0]["Pseudonyme"]."</h1>";
+				$req = $conn->prepare($reqPrep);
+				$req->execute();
+				$salutation=$req->fetchALL(PDO::FETCH_ASSOC);
+				echo"<h1><a href='../Accueil/accueil.php' style='color: #FF595A;'>Hello ".$salutation[0]['Pseudonyme']."</a></h1>";
 
-					$conn= NULL;
+				$conn= NULL;
 
-				}                 
-				catch(Exception $e){
-					die("Erreur : " . $e->getMessage());
-				}
+			}                 
+			catch(Exception $e){
+				die("Erreur : " . $e->getMessage());
 			}
-		?>
-		  <h1><a href="../Accueil/accueil_EN.php">Video Game Wiki</a></h1>
+		}
+		else{
+			echo"<h1><a href='../Accueil/accueil_EN.php'>Video Game Wiki</a></h1>";
+		}
+	?>
 		  <nav>
 				<!-- Navigation : Liste des types de jeux et sélecteur de langue -->
 				<ul class="menu">
@@ -41,13 +43,19 @@
 						</ul>
 				  </li>
 				</ul>
-				
-		<?php
+				<?php
 			if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true){ // si un utilisateur est authentifié
 		?>
 		<div class="connexion">
-			<a class="connexion-button" href="../Connexion/log_out.php">Log out</a>
+			
+		<a href="../Profil/profil_EN.php">
+			<img src="../../photo/Profil/User_1.png" alt="Profil" style="margin-top:-45px;">
+		</a>
+
+
+			
 		</div>
+		
 			
 		<?php
 			}
@@ -60,7 +68,6 @@
 		</div>
 		<?php
 			}
-		?>
-				
+		?>			
 	</nav>
 </header>

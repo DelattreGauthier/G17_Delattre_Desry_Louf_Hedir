@@ -14,7 +14,7 @@
 				$req = $conn->prepare($reqPrep);
 				$req->execute();
 				$salutation=$req->fetchALL(PDO::FETCH_ASSOC);
-				echo"<h1 style='text-align: center; color: #FF595A;'>Bonjour ".$salutation[0]["Pseudonyme"]."</h1>";
+				echo"<h1><a href='../Accueil/accueil.php' style='color: #FF595A;'>Bonjour ".$salutation[0]['Pseudonyme']."</a></h1>";
 
 				$conn= NULL;
 
@@ -23,8 +23,10 @@
 				die("Erreur : " . $e->getMessage());
 			}
 		}
+		else{
+			echo"<h1><a href='../Accueil/accueil.php'>Wiki Jeux Vidéo</a></h1>";
+		}
 	?>
-	<h1><a href="../Accueil/accueil.php">Wiki Jeux Vidéo</a></h1>
 	<nav>
 		<!-- Navigation : Liste des types de jeux et sélecteur de langue -->
 		<ul class="menu">

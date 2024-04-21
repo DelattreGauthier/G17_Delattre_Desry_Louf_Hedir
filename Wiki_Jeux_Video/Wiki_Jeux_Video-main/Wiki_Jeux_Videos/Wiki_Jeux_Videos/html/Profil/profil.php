@@ -19,6 +19,9 @@
 			die("Erreur : " . $e->getMessage());
 		}
 	}
+	else{
+		header("Location:../Accueil/accueil.php"); 
+	}
 	?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -53,8 +56,16 @@
 				echo "<h3>Prenom :".$resultats[0]["Prenom"]."</h3>";
 				echo "<h3>Adresse :".$resultats[0]["Courriel"]."</h3>";
 				echo "<h3>Numéro de téléphone :".$resultats[0]["Telephone"]."</h3>";
-			?>
-            </div>			
+
+				echo"</div>";
+				if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true){ // si un utilisateur est authentifié
+
+						echo"<div class='connexion'>";
+							echo"<a class='connexion-button' href='../Connexion/log_out.php'>Log out</a>";
+						echo"</div>";
+
+				}
+			?>				
 		</main>
  
 		<!-- Pied de page -->
