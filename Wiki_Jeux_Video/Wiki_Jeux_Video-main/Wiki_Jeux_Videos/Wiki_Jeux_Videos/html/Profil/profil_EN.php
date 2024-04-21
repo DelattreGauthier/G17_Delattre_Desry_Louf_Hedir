@@ -35,7 +35,7 @@
   
   <body>
 		<!-- En-tête de la page -->
-		<?php  include ('../../php/header.php'); ?>
+		<?php  include ('../../php/header_EN.php'); ?>
 		<!-- Sélecteur de langue -->
 		<div class="language">
     		<a href="../Profil/profil.php" class="photo_language">

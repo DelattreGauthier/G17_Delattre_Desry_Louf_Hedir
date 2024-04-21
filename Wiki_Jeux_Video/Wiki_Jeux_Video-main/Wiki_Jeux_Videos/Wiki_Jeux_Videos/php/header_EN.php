@@ -9,12 +9,14 @@
 			try{
 				require("../Connexion/connexion.php");               
 				
-				$reqPrep = "SELECT DISTINCT Pseudonyme FROM account WHERE  Courriel='".$_SESSION["nom"]."'";
+				$reqPrep = "SELECT DISTINCT Pseudonyme FROM account WHERE  Courriel=:courriel";
 					
 				$req = $conn->prepare($reqPrep);
-				$req->execute();
+				$courriel=$_SESSION["nom"];
+				$reqTab = array(":courriel" => $courriel);
+				$req->execute($reqTab);
 				$salutation=$req->fetchALL(PDO::FETCH_ASSOC);
-				echo"<h1><a href='../Accueil/accueil.php' style='color: #FF595A;'>Hello ".$salutation[0]['Pseudonyme']."</a></h1>";
+				echo"<h1><a href='../Accueil/accueil_EN.php'>Hello ".$salutation[0]['Pseudonyme']."</a></h1>";
 
 				$conn= NULL;
 
