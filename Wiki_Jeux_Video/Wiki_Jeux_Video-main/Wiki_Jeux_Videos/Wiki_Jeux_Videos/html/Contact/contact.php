@@ -21,7 +21,8 @@
     <main id="contact">
       <form class="formLetter" method="post" action="../Accueil/accueil.php">
             <fieldset>  <!-- la balise fieldset peut être utilisé pour regrouper un ensemble de champs -->
-                <legend>Informations sur vous <span style="color: red; font-weight: bold;">*</span>:</legend>
+                <legend>Contactez-nous <br><br></legend>
+                <label>Informations sur vous <span style="color: red; font-weight: bold;">*</span>:</label>
                 <div class="genre">
                   <input type="radio" name="genre" id="mme" required>
                   <label for="mme">Madame</label>
@@ -53,7 +54,7 @@
             </fieldset>
             
             <fieldset>
-                <legend>Votre demande <span style="color: red; font-weight: bold;">*</span>:</legend>
+                <label>Votre demande <span style="color: red; font-weight: bold;">*</span>:</label>
                 <label for="objet">Objet du message :</label>
                 <select id="objet" name="objet">
                     <option value="0">- Sélectionner -</option>

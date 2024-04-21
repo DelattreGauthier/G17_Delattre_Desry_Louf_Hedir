@@ -625,12 +625,12 @@ input[type=submit]:hover, input[type=reset]:hover {
 
 
 /* Styles pour d'autres éléments */
-fieldset {
+ fieldset {
   border: none;
   display: flex;
   flex-direction: column;
   width: 100%;
-}
+} 
 
 form.formLetter {
   max-width: 50%;
@@ -645,7 +645,7 @@ legend {
   font-size: 150%;
   padding: 6px;
   font-weight: bold;
-}
+} 
 
 .genre {
   margin-top: 3%;
