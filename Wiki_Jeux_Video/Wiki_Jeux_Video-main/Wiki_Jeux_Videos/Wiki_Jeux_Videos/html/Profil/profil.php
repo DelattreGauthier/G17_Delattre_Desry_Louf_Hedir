@@ -14,7 +14,7 @@
 			$resultats = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat
 			$conn = null; // On ferme la connexion        
 		
-			echo"tet";
+
 		} catch(Exception $e){
 			die("Erreur : " . $e->getMessage());
 		}
@@ -22,7 +22,7 @@
 	else{
 		header("Location:../Accueil/accueil.php"); 
 	}
-	?>
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -59,10 +59,13 @@
 
 				echo"</div>";
 				if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true){ // si un utilisateur est authentifié
-
-						echo"<div class='connexion'>";
-							echo"<a class='connexion-button' href='../Connexion/log_out.php'>Log out</a>";
-						echo"</div>";
+					
+					echo"<div class='connexion'>";
+						if(isset($_SESSION["admin"])&& $_SESSION["admin"]==true){
+							echo"<a class='connexion-button' href='../Admin/admin.php'>Base de donnée</a><br>";
+						}
+						echo"<a class='connexion-button' href='../Connexion/log_out.php'>Déconnexion</a>";
+					echo"</div>";
 
 				}
 			?>				

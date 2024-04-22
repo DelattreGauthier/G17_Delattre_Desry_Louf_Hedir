@@ -17,8 +17,14 @@ header {
   top: 0;
   box-shadow: 0px 5px 5px #010a1f;
 }
-
-
+table,td,th{
+  border: solid; border-collapse:collapse;text-align:center;
+}
+.center-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
 .connexion {
   display: block;
   max-width: 140px; 
@@ -129,6 +135,7 @@ iframe {
 .a_propos{
   width: 10em;
 }
+
 /*style pour les titres h1*/
 h1 {
   margin: 0;

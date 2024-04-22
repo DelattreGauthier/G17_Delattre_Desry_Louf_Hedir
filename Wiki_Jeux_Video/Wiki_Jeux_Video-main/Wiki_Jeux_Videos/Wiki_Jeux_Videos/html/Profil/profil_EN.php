@@ -14,7 +14,7 @@
 			$resultats = $req->fetchAll(PDO::FETCH_ASSOC);//récupérer le résultat
 			$conn = null; // On ferme la connexion        
 		
-			echo"tet";
+
 		} catch(Exception $e){
 			die("Erreur : " . $e->getMessage());
 		}
