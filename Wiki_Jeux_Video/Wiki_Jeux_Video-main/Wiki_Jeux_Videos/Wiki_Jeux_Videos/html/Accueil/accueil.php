@@ -1,3 +1,13 @@
+<?php
+// Vérifie si le cookie de préférence linguistique est défini
+if (isset($_COOKIE['language_preference'])) {
+    // Redirige vers la version correspondante de la page d'accueil
+    if ($_COOKIE['language_preference'] === "En") {
+        header("Location: ../Accueil/accueil_EN.php");
+        exit();
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -10,15 +20,22 @@
   
   <body>
 		<!-- En-tête de la page -->
-		<?php  include ('../../php/header.php'); ?>
+		<?php include ('../../php/header.php'); ?>
 		<!-- Sélecteur de langue -->
-		<div class="language">
-    		<a href="../Accueil/accueil_EN.php" class="photo_language">
-        		<div class="photo_language">
-            		<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
-        		</div>
-    		</a>
-		</div>
+			<?php
+			// Vérifie si le cookie de préférence linguistique est défini
+				if(!isset($_COOKIE['language_preference'])) {
+			?>
+				<div class="language">
+					<a href="../Accueil/accueil_EN.php" class="photo_language">
+						<div class="photo_language">
+							<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
+						</div>
+					</a>
+				</div>
+			<?php
+				}
+			?>
 
 		<!-- Contenu principal -->
 		<main>
@@ -49,6 +66,6 @@
 		</main>
 
 		<!-- Pied de page -->
-		<?php  include ('../../php/footer.php'); ?>
+		<?php include ('../../php/footer.php'); ?>
   </body>
 </html>

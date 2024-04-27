@@ -17,14 +17,20 @@
   <body>
 		<!-- En-tête de la page -->
 		<?php  include ('../../php/header_EN.php'); ?>
-		<!-- Sélecteur de langue -->
-		<div class="language">
-    		<a href="../Profil/admin.php" class="photo_language">
-        		<div class="photo_language">
-            		<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
-        		</div>
-    		</a>
-		</div>
+		<?php
+			// Vérifie si le cookie de préférence linguistique est défini
+				if(!isset($_COOKIE['language_preference'])) {
+			?>
+				<div class="language">
+					<a href="../Admin/admin.php" class="photo_language">
+						<div class="photo_language">
+							<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
+						</div>
+					</a>
+				</div>
+			<?php
+				}
+			?>
 
 		<!-- Contenu principal -->
 		<main>

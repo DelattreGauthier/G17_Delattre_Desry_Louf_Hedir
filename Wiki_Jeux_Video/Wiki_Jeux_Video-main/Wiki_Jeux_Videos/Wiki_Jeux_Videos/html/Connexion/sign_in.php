@@ -11,13 +11,20 @@
   <body>
     <!-- La balise body contient l'en-tête, le contenu principal et le pied de page de la page web. -->
     <?php  include ('../../php/header.php'); ?>
-    <div class="language">
-    		<a href="../Connexion/sign_in_EN.php" class="photo_language">
-        		<div class="photo_language">
-            		<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
-        		</div>
-    		</a>
-		</div>
+		<?php
+			// Vérifie si le cookie de préférence linguistique est défini
+				if(!isset($_COOKIE['language_preference'])) {
+			?>
+				<div class="language">
+					<a href="../Connexion/sign_in_EN.php" class="photo_language">
+						<div class="photo_language">
+							<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
+						</div>
+					</a>
+				</div>
+			<?php
+				}
+			?>
 
     <main id="contact">
       <form class="formLetter" method="post" action="ajouter.php">
@@ -45,6 +52,18 @@
 
                 <label for="motdepasse">Mot de Passe (Plus de 8 caractères dont 1 chiffre minimum)<span style="color: red; font-weight: bold;">*</span> :</label>
                 <input type="text" name="motdepasse" id="motdepasse" placeholder="Votre mot de passe" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" required>
+                <br><br>
+
+                <label for="ville_naissance"> Votre ville de naissance<span style="color: red; font-weight: bold;">*</span> :</label>
+                <input type="text" name="ville_naissance" id="ville_naissance" placeholder="Votre ville de naissance" pattern="^[\p{L}\-' ]{1,40}$" required>
+                <br><br>
+
+                <label for="language_preference">Choisissez votre langue préférée<span style="color: red; font-weight: bold;">*</span> :</label>
+                <select name="language_preference" id="language_preference" required>
+                    <option value="Fr">Français</option>
+                    <option value="En">Anglais</option>
+                </select>
+
             </fieldset>
             
             <fieldset> 

@@ -37,13 +37,20 @@
 		<!-- En-tête de la page -->
 		<?php  include ('../../php/header.php'); ?>
 		<!-- Sélecteur de langue -->
-		<div class="language">
-    		<a href="../Profil/profil_EN.php" class="photo_language">
-        		<div class="photo_language">
-            		<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
-        		</div>
-    		</a>
-		</div>
+		<?php
+			// Vérifie si le cookie de préférence linguistique est défini
+				if(!isset($_COOKIE['language_preference'])) {
+			?>
+				<div class="language">
+					<a href="../Profil/profil_EN.php" class="photo_language">
+						<div class="photo_language">
+							<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
+						</div>
+					</a>
+				</div>
+			<?php
+				}
+			?>
 
 		<!-- Contenu principal -->
 		<main>
@@ -52,10 +59,10 @@
 			<?php
 			// Affichage des informations de l'utilisateur avec échappement des sorties
 				echo "<h1>Profil de ".$resultats[0]["Pseudonyme"]."</h1>";
-				echo "<h3>Nom :".$resultats[0]["Nom"]."</h3>";
-				echo "<h3>Prenom :".$resultats[0]["Prenom"]."</h3>";
-				echo "<h3>Adresse :".$resultats[0]["Courriel"]."</h3>";
-				echo "<h3>Numéro de téléphone :".$resultats[0]["Telephone"]."</h3>";
+				echo "<h3>Nom : ".$resultats[0]["Nom"]."</h3>";
+				echo "<h3>Prenom : ".$resultats[0]["Prenom"]."</h3>";
+				echo "<h3>Adresse : ".$resultats[0]["Courriel"]."</h3>";
+				echo "<h3>Numéro de téléphone : ".$resultats[0]["Telephone"]."</h3>";
 
 				echo"</div>";
 				if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true){ // si un utilisateur est authentifié

@@ -18,14 +18,20 @@
   <body>
 		<!-- En-tête de la page -->
 		<?php  include ('../../php/header.php'); ?>
-		<!-- Sélecteur de langue -->
-		<div class="language">
-    		<a href="../Profil/admin_EN.php" class="photo_language">
-        		<div class="photo_language">
-            		<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
-        		</div>
-    		</a>
-		</div>
+		<?php
+			// Vérifie si le cookie de préférence linguistique est défini
+				if(!isset($_COOKIE['language_preference'])) {
+			?>
+				<div class="language">
+					<a href="../Admin/admin_EN.php" class="photo_language">
+						<div class="photo_language">
+							<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
+						</div>
+					</a>
+				</div>
+			<?php
+				}
+			?>
 
 		<!-- Contenu principal -->
 		<main>
@@ -66,8 +72,8 @@
                             <td>$row[Telephone]</td>
                             <td>$row[Pseudonyme]</td>
                             <td>$row[Mot_de_Passe]</td>
-                            <td>Modifier</td>
-                            <td>Supprimer</td>
+                            <td><a class='website_link' href='../Connexion/modifier.php?identifiant=$row[Courriel]'>Modifier</a></td>
+                            <td><a class='website_link' href='../Connexion/supprimer.php?identifiant=$row[Courriel]'>Supprimer</a></td>
                         </tr>";
                     }
                     echo "</table>";

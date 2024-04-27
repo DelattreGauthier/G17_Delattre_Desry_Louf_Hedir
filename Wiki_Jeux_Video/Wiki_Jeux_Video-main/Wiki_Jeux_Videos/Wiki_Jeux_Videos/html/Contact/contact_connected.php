@@ -16,7 +16,7 @@
 				if(!isset($_COOKIE['language_preference'])) {
 			?>
 				<div class="language">
-					<a href="../Contact/contact_EN.php" class="photo_language">
+					<a href="../Contact/contact_connected_EN.php" class="photo_language">
 						<div class="photo_language">
 							<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
 						</div>
@@ -29,36 +29,8 @@
       <form class="formLetter" method="post" action="../Accueil/accueil.php">
             <fieldset>  <!-- la balise fieldset peut être utilisé pour regrouper un ensemble de champs -->
                 <legend>Contactez-nous <br><br></legend>
-                <label>Informations sur vous <span style="color: red; font-weight: bold;">*</span>:</label>
-                <div class="genre">
-                  <input type="radio" name="genre" id="mme" required>
-                  <label for="mme">Madame</label>
-                  <input type="radio" name="genre" id="mr">
-                  <label for="mr">Monsieur</label>
-                  <input type="radio" name="genre" id="autre">
-                  <label for="autre">Autre</label>
-                </div>
-                <br><br> <!-- La balise br sert à effectuer un retour à la ligne-->
-				
-                <label for="nom">Nom <span style="color: red; font-weight: bold;">*</span>:</label >
-                <input type="text" name="nom" id="nom" placeholder="Votre nom" required>
+                <legend>Informations sur vous:</legend>
                 <br><br>
-
-                <label for="prenom">Prénom <span style="color: red; font-weight: bold;">*</span>:</label >
-                <input type="text" name="prenom" id="prenom" placeholder="Votre prénom" required>
-                <br><br>
-                
-                <label for="email">Courriel <span style="color: red; font-weight: bold;">*</span>: </label >
-                <input type="email" name="courriel" id="email" placeholder="Votre email" required>
-                <br><br>
-
-                <label for="telephone">Téléphone <span style="color: red; font-weight: bold;">*</span>: </label>
-                <input type="tel" name="telephone" id="telephone" placeholder="Votre numéro de téléphone" required>
-                <br><br>
-
-                <label for="pseudonyme">Pseudonyme<span style="color: red; font-weight: bold;">*</span>:</label>
-                <input type="text" name="pseudonyme" id="pseudonyme" placeholder="Votre pseudonyme">
-            </fieldset>
             
             <fieldset>
                 <label>Votre demande <span style="color: red; font-weight: bold;">*</span>:</label>

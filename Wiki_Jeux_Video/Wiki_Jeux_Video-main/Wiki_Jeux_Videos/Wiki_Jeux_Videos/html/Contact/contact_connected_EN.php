@@ -29,38 +29,8 @@
         <form class="formLetter" method="post" action="../Accueil/accueil.php">
             <fieldset>  <!-- la balise fieldset peut être utilisé pour regrouper un ensemble de champs -->
                 <legend>Contact us <br><br></legend>
-                <label>Your Information <span style="color: red; font-weight: bold;">*</span>:</label>
-                
-                <div class="genre">
-                  <input type="radio" name="genre" id="mme" required>
-                  <label for="mme">Ms</label>
-                  <input type="radio" name="genre" id="mr">
-                  <label for="mr">Mr</label>
-                  <input type="radio" name="genre" id="autre">
-                  <label for="autre">Other</label>
-                </div>
-
-                <br><br> <!-- La balise br sert à effectuer un retour à la ligne-->
-                
-                <label for="nom">Last Name <span style="color: red; font-weight: bold;">*</span>:</label >
-                <input type="text" name="nom" id="nom" placeholder="Your Surname" required>
+                <legend>Your Information:</legend>
                 <br><br>
-                
-                <label for="prenom">First Name <span style="color: red; font-weight: bold;">*</span>:</label >
-                <input type="text" name="prenom" id="prenom" placeholder="Your First Name" required>
-                <br><br>
-                
-                <label for="email">Email <span style="color: red; font-weight: bold;">*</span>:</label >
-                <input type="email" name="courriel" id="email" placeholder="Your Email" required>
-                <br><br>
-
-                <label for="telephone">Phone <span style="color: red; font-weight: bold;">*</span>:</label>
-                <input type="tel" name="telephone" id="telephone" placeholder="Your Phone Number" required>
-                <br><br>
-
-                <label for="pseudonyme">Username<span style="color: red; font-weight: bold;">*</span> :</label>
-                <input type="text" name="pseudonyme" id="pseudonyme" placeholder="Your Username">
-            </fieldset>
             
             <fieldset>
                 <label>Your Request<span style="color: red; font-weight: bold;">*</span>:</label>

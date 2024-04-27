@@ -11,13 +11,20 @@
   <body>
     <!-- La balise body contient l'en-tête, le contenu principal et le pied de page de la page web. -->
     <?php  include ('../../php/header_EN.php'); ?>
-    <div class="language">
-    	<a href="../Connexion/sign_in.php" class="photo_language">
-        	<div class="photo_language">
-            	<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
-        	</div>
-    	</a>
-	</div>
+		<?php
+			// Vérifie si le cookie de préférence linguistique est défini
+				if(!isset($_COOKIE['language_preference'])) {
+			?>
+				<div class="language">
+					<a href="../Connexion/sign_in.php" class="photo_language">
+						<div class="photo_language">
+							<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
+						</div>
+					</a>
+				</div>
+			<?php
+				}
+			?>
 
 
     <main id="contact">
@@ -46,6 +53,12 @@
 
                 <label for="motdepasse">Password (More than 8 characters with at least 1 number)<span style="color: red; font-weight: bold;">*</span> :</label>
                 <input type="text" name="motdepasse" id="motdepasse" placeholder="Your password" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" required>
+
+                <label for="language_preference">Choose your preferred language<span style="color: red; font-weight: bold;">*</span> :</label>
+                <select name="language_preference" id="language_preference" required>
+                    <option value="Fr">Français</option>
+                    <option value="En">Anglais</option>
+                </select>
             </fieldset>
             
             <fieldset> 

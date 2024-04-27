@@ -34,7 +34,6 @@ table,td,th{
 
 }
 
-
 .sign-button{
   text-align: center;
   font-weight: bold;
@@ -516,6 +515,7 @@ select,
 input[type=email],
 input[type=tel],
 input[type=file],
+input[type=password],
 textarea {
   border-radius: 30px;
   width: 100%;
@@ -529,11 +529,14 @@ textarea {
   transition: all 0.2s ease;
 }
 
+
+
 /* Styles pour les états "hover" des champs de formulaire */
 input[type=text]:hover,
 input[type=select]:hover,
 input[type=email]:hover,
-input[type=tel]:hover {
+input[type=tel]:hover,
+input[type=password]:hover {
   background-color: #FF595A;
   color: white;
 }
@@ -542,7 +545,8 @@ input[type=tel]:hover {
 input[type=text]:focus,
 input[type=select]:focus,
 input[type=email]:focus,
-input[type=tel]:focus {
+input[type=tel]:focus,
+input[type=password]:focus {
   background-color: #FF595A;
   color: white;
   cursor: text;
@@ -551,11 +555,10 @@ input[type=tel]:focus {
 /* Styles pour les étiquettes des champs de formulaire */
 label[for="objet"] {
   display: block;
-  position: fixed;
 }
 
 /* Styles pour l'élément "objet" du formulaire */
-#objet {
+#objet, #language_preference {
   border-radius: 30px;
   width: 100%;
   padding: 3%;
@@ -566,7 +569,7 @@ label[for="objet"] {
   border: none;
 }
 
-#objet:hover {
+#objet:hover, #language_preference:hover {
   background-color: #FF595A;
   color: white;
   -webkit-appearance: none;
@@ -574,7 +577,7 @@ label[for="objet"] {
         appearance: none;
 }
 
-#objet:focus {
+#objet:focus, #language_preference:focus {
   border-radius: 30px;
   width: 100%;
   padding: 3%;
@@ -625,11 +628,11 @@ input[type=reset] {
   font-size: 170%;
 }
 
+
 input[type=submit]:hover, input[type=reset]:hover {
   background-color: #FF595A;
   color: white;
 }
-
 
 /* Styles pour d'autres éléments */
  fieldset {
@@ -647,6 +650,11 @@ form.formLetter {
 #contact {
   justify-content: center;
 }
+
+#modifier_formulaire {
+  justify-content: center;
+}
+
 /* Styles pour d'autres éléments */
 legend {
   font-size: 150%;
@@ -672,7 +680,8 @@ select {
 input[type=text]:hover::placeholder,
 input[type=select]:hover::placeholder,
 input[type=email]:hover::placeholder,
-input[type=tel]:hover::placeholder {
+input[type=tel]:hover::placeholder,
+input[type=password]:hover::placeholder {
   color: white; /* Couleur du placeholder lorsqu'il est survolé */
   transition: all 0.2s ease; /* Transition de couleur sur 0.2s */
 }
@@ -749,4 +758,40 @@ label[for=videoToggle]:hover {
    display: none;
   }
 
+}
+
+/* Styles pour le pop-up des cookies */
+.cookie-popup {
+  position: fixed;
+  bottom: 20px;
+  background-color:#FF595A;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.cookie-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.cookie-content p {
+  margin: 0;
+}
+
+.cookie-content button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cookie-content button:hover {
+  background-color: #ffffff;
+  color: #000c22;
 }
