@@ -34,6 +34,9 @@ table,td,th{
 
 }
 
+.modifier_button{
+  text-align: center;
+}
 .sign-button{
   text-align: center;
   font-weight: bold;

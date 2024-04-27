@@ -64,15 +64,22 @@
   
   <body>
 		<!-- En-tête de la page -->
-		<?php  include ('../../php/header_EN.php'); ?>
+		<?php  include ('../../php/header.php'); ?>
 		<!-- Sélecteur de langue -->
-		<div class="language">
-			<a href="../Connexion/modifier.php" class="photo_language">
-        		<div class="photo_language">
-            		<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
-        		</div>
-    		</a>
-		</div>
+		<?php
+			// Vérifie si le cookie de préférence linguistique est défini
+				if(!isset($_COOKIE['language_preference'])) {
+			?>
+				<div class="language">
+					<a href="../Connexion/modifier.php" class="photo_language">
+						<div class="photo_language">
+							<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
+						</div>
+					</a>
+				</div>
+			<?php
+				}
+			?>
  
 		<!-- Contenu principal -->
 		<main id="modifier_formulaire">
@@ -98,7 +105,7 @@
 							<label for="password">Password : </label>
 							<input type="password" id="mdp" name="motdepasse" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" value="<?php echo $affichage['Mot_de_Passe']; ?>"><br/>
 								
-							<input class="modifier_button" type="submit" name="modifier" value="Modifier">
+							<input class="modifier_button" type="submit" name="modifier" value="✅">
 
 						</fieldset>
 					</form>
