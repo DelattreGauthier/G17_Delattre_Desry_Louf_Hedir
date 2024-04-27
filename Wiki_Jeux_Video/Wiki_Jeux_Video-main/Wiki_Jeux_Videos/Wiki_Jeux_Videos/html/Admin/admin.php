@@ -1,7 +1,8 @@
 <?php
 	session_start();
-	if(!isset($_SESSION["authentifie"]) || $_SESSION["authentifie"]==false){
-		header("Location:../Accueil/accueil.php"); 
+	if (!isset($_SESSION["authentifie"]) || $_SESSION["authentifie"] == false || !isset($_SESSION["admin"]) || $_SESSION["admin"] == false) {
+		header("Location:../Accueil/accueil.php");
+		exit(); // Assure que le script s'arrête après la redirection
 	}
 ?>
 <!DOCTYPE html>
@@ -87,5 +88,6 @@
                 ?>
             </div>
         </main>
+        <?php  include ('../../php/footer.php'); ?>
     </body>
 </html>

@@ -54,7 +54,7 @@
                 <input type="text" name="motdepasse" id="motdepasse" placeholder="Votre mot de passe" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" required>
                 <br><br>
 
-                <label for="ville_naissance"> Votre ville de naissance<span style="color: red; font-weight: bold;">*</span> :</label>
+                <label for="ville_naissance">Votre ville de naissance<span style="color: red; font-weight: bold;">*</span> :</label>
                 <input type="text" name="ville_naissance" id="ville_naissance" placeholder="Votre ville de naissance" pattern="^[\p{L}\-' ]{1,40}$" required>
                 <br><br>
 

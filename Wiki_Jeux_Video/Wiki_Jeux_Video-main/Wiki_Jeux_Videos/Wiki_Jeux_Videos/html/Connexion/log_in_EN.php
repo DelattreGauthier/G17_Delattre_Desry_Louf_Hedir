@@ -52,7 +52,7 @@
   <head>
     <!-- Les éléments meta et link dans la balise head sont utilisés pour définir les métadonnées de la page et lier le CSS et l'icône du site. -->
     <meta charset="UTF-8">
-    <title>Wiki Jeux Vidéo - Log In</title>
+    <title>Video Game Wiki - Log In</title>
     <link rel="stylesheet" href="../../css/WIKIJEUXVIDEO.css">
     <link rel="icon" type="image/x-icon" href="../../photo/FonctionnementduSite/logo.png">
   </head>

@@ -3,7 +3,7 @@
   <head>
     <!-- Les éléments meta et link dans la balise head sont utilisés pour définir les métadonnées de la page et lier le CSS et l'icône du site. -->
     <meta charset="UTF-8">
-    <title>Wiki Jeux Vidéo - Sign In</title>
+    <title>Video Game Wiki - Sign In</title>
     <link rel="stylesheet" href="../../css/WIKIJEUXVIDEO.css">
     <link rel="icon" type="image/x-icon" href="../../photo/FonctionnementduSite/logo.png">
   </head>
@@ -53,6 +53,11 @@
 
                 <label for="motdepasse">Password (More than 8 characters with at least 1 number)<span style="color: red; font-weight: bold;">*</span> :</label>
                 <input type="text" name="motdepasse" id="motdepasse" placeholder="Your password" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" required>
+                <br><br>
+
+                <label for="ville_naissance">Your hometown<span style="color: red; font-weight: bold;">*</span> :</label>
+                <input type="text" name="ville_naissance" id="ville_naissance" placeholder="Your hometown" pattern="^[\p{L}\-' ]{1,40}$" required>
+                <br><br>
 
                 <label for="language_preference">Choose your preferred language<span style="color: red; font-weight: bold;">*</span> :</label>
                 <select name="language_preference" id="language_preference" required>
