@@ -54,7 +54,7 @@
             $resultats = $statement->fetchAll(PDO::FETCH_ASSOC);
 
             // Affichage des commentaires
-            echo "<h2>Liste de tous les commentaires :</h2>";
+            echo "<h2>List of all comments :</h2>";
             echo "<ul>";
             foreach ($resultats as $comment) {
                 echo "<strong>" . $comment['Pseudonyme'] . "</strong> : " . $comment['Comment'] . "</li>";

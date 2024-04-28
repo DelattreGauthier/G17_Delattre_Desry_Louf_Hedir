@@ -1,50 +1,45 @@
 <?php
 	session_start();
   
-	//Script du traitement du formulaire d'authentification
+	// Script de traitement du formulaire d'authentification
 	if(isset($_POST["log_in"])){
-    $login=$_POST['courriel'];
+		$login=$_POST['courriel'];
 		$mdp=$_POST['motdepasse'];
-    try{
-      require("../Connexion/connexion.php");               
-      
-      $reqPrep = "SELECT DISTINCT Courriel,Mot_de_Passe FROM account WHERE  Courriel='".$login."'";
-        
-      $req = $conn->prepare($reqPrep);
-      $req->execute();
-      $resultat=$req->fetchALL(PDO::FETCH_ASSOC);
-      $conn= NULL;
-
-    }                 
-    catch(Exception $e){
-      die("Erreur : " . $e->getMessage());
-    }
-
-		if($login==$resultat[0]["Courriel"] && $mdp==$resultat[0]["Mot_de_Passe"]){ //si un utilisateur normal (client): s'assurer que le nom et le mot-de-passe sont corrects
-      $_SESSION["nom"]=$login; //Variable de session "nom"
-			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
-      if ($login=="admin.wiki@jeux.videos.com" && $mdp=="123Admin123"){//si utilisateur Admin
-        $_SESSION["admin"]=true;//Variable de session "admin"
-      }
-      else{
-        $_SESSION["admin"]=false; //Variable de session "admin"
-      }
+		try{
+			require("../Connexion/connexion.php");               
 			
-      header("Location:../Accueil/accueil.php"); 
-		}
-		else if ($login=="admin.wiki@jeux.videos.com" && $mdp=="123Admin123"){//si utilisateur Admin
-			$_SESSION["nom"]=$login;//Variable de session "nom"
-			$_SESSION["authentifie"]=true;//Variable de session "authentifie"
-			$_SESSION["admin"]=true;//Variable de session "admin"
-      header("Location:../Accueil/accueil.php");
-      
-		}
-    else {
-      echo"<h2 style='text-align: center; color: #FF595A;'>L'adresse ou le mot de passe est incorrect</h2>";
-      session_destroy();
-    }
-	}	  
+			// Requête SQL pour récupérer les informations de l'utilisateur
+			$reqPrep = "SELECT DISTINCT Courriel,Mot_de_Passe FROM account WHERE  Courriel='".$login."'";
+			
+			$req = $conn->prepare($reqPrep);
+			$req->execute();
+			$resultat=$req->fetchALL(PDO::FETCH_ASSOC);
+			$conn= NULL;
 
+		}                 
+		catch(Exception $e){
+			die("Erreur : " . $e->getMessage());
+		}
+
+		if($login==$resultat[0]["Courriel"] && $mdp==$resultat[0]["Mot_de_Passe"]){ // Vérifie si l'utilisateur et le mot de passe sont corrects
+			$_SESSION["nom"]=$login; // Variable de session "nom"
+			$_SESSION["authentifie"]=true; // Variable de session "authentifie"
+			if ($login=="admin.wiki@jeux.videos.com" && $mdp=="123Admin123"){ // Vérifie si l'utilisateur est admin
+				$_SESSION["admin"]=true; // Variable de session "admin"
+			} else {
+				$_SESSION["admin"]=false; // Variable de session "admin"
+			}
+			header("Location:../Accueil/accueil.php"); // Redirige vers la page d'accueil
+		} else if ($login=="admin.wiki@jeux.videos.com" && $mdp=="123Admin123"){ // Vérifie si l'utilisateur est admin
+			$_SESSION["nom"]=$login; // Variable de session "nom"
+			$_SESSION["authentifie"]=true; // Variable de session "authentifie"
+			$_SESSION["admin"]=true; // Variable de session "admin"
+			header("Location:../Accueil/accueil.php"); // Redirige vers la page d'accueil
+		} else {
+			echo "<h2 style='text-align: center; color: #FF595A;'>L'adresse ou le mot de passe est incorrect</h2>"; // Affiche un message d'erreur
+			session_destroy(); // Détruit la session
+		}
+	}	  
 ?>
 
 <!DOCTYPE html>
