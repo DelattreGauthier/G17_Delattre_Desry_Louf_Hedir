@@ -1,35 +1,37 @@
 <?php
+    // Vérifie si le formulaire de remise a été soumis
+    if(isset($_POST["Remettre"])){
+        // Récupération des données du formulaire
+        $genre = $_POST["genre"];
+        $nom = $_POST["nom"];
+        $prenom = $_POST["prenom"];
+        $email = $_POST["courriel"];
+        $telephone = $_POST["telephone"];
+        $pseudonyme = $_POST["pseudonyme"];
+        $demande = $_POST["objet"];
+        $message = $_POST["description"];
 
-  if(isset($_POST["Remettre"])){
-    // Récupération des données du formulaire
-    $genre = $_POST["genre"];
-    $nom = $_POST["nom"];
-    $prenom = $_POST["prenom"];
-    $email = $_POST["courriel"];
-    $telephone = $_POST["telephone"];
-    $pseudonyme = $_POST["pseudonyme"];
-    $demande = $_POST["objet"];
-    $message = $_POST["description"];
-
-    try {
-        // Connexion à la base de données
-        require("../Connexion/connexion.php");  
-        // Requête SQL pour insérer les données dans la table contact_not_connected
-        $query = "INSERT INTO contact_not_connected (Genre, Nom, Prenom, Courriel, Telephone, Pseudonyme, Demande, Message) VALUES (:genre, :nom, :prenom, :courriel, :telephone, :pseudonyme, :demande, :message)";
-        // Préparation de la requête
-        $statement = $conn->prepare($query);
-        // Liaison des paramètres
-        $params = array(":genre" => $genre, ":nom" => $nom, ":prenom" => $prenom, ":courriel" => $email, ":telephone" => $telephone, ":pseudonyme" => $pseudonyme, ":demande" => $demande, ":message" => $message);
-        // Exécution de la requête
-        $statement->execute($params);
-        // Redirection vers la page d'accueil après l'envoi du formulaire
-        header("Location:../Accueil/accueil_EN.php");
-        exit(); // Assure que le script s'arrête après la redirection
-    } catch(Exception $e){
-        echo "Erreur : " . $e->getMessage();
+        try {
+            // Connexion à la base de données
+            require("../Connexion/connexion.php");  
+            // Requête SQL pour insérer les données dans la table contact_not_connected
+            $query = "INSERT INTO contact_not_connected (Genre, Nom, Prenom, Courriel, Telephone, Pseudonyme, Demande, Message) VALUES (:genre, :nom, :prenom, :courriel, :telephone, :pseudonyme, :demande, :message)";
+            // Préparation de la requête
+            $statement = $conn->prepare($query);
+            // Liaison des paramètres
+            $params = array(":genre" => $genre, ":nom" => $nom, ":prenom" => $prenom, ":courriel" => $email, ":telephone" => $telephone, ":pseudonyme" => $pseudonyme, ":demande" => $demande, ":message" => $message);
+            // Exécution de la requête
+            $statement->execute($params);
+            // Redirection vers la page d'accueil après l'envoi du formulaire
+            header("Location:../Accueil/accueil_EN.php");
+            exit(); // Assure que le script s'arrête après la redirection
+        } catch(Exception $e){
+            // Gestion des erreurs
+            echo "Erreur : " . $e->getMessage();
+        }
     }
-  }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

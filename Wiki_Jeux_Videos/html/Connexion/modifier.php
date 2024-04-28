@@ -1,18 +1,19 @@
 <?php
-
 	session_start();
 
+	// Vérifie si l'utilisateur est authentifié en tant qu'admin
 	if (!isset($_SESSION["authentifie"]) || $_SESSION["authentifie"] == false || !isset($_SESSION["admin"]) || $_SESSION["admin"] == false) {
 		header("Location:../Accueil/accueil.php");
 		exit(); // Assure que le script s'arrête après la redirection
 	}
+
 	// Vérifie si un identifiant de compte a été passé dans l'URL
 	if (isset($_GET["identifiant"])) {
 		try {
 			require("connexion.php");
 
 			$identifiant = $_GET["identifiant"];
-			
+
 			// Sélectionne les informations du compte correspondant à l'identifiant
 			$reqPrep = "SELECT * FROM account WHERE Courriel = :identifiant";
 			$req = $conn->prepare($reqPrep);
@@ -23,7 +24,7 @@
 			die("Erreur : " . $e->getMessage());
 		}
 	}
-	
+
 	// Vérifie si le formulaire de modification a été soumis
 	if (isset($_POST["modifier"])) {
 		$courriel = $_POST["courriel"]; // Récupérer les valeurs à modifier
@@ -36,29 +37,19 @@
 		try {
 			require("connexion.php");
 
+			// Requête SQL pour mettre à jour les informations du compte
 			$reqPrep = "UPDATE account SET Nom = :nom, Prenom = :prenom, Telephone = :tel, Pseudonyme = :pseudo, Mot_de_Passe = :mdp WHERE Courriel = :courriel";
 			$req = $conn->prepare($reqPrep);
 			$req->execute(array(":nom" => $nom, ":prenom" => $prenom, ":courriel" => $courriel, ":tel" => $tel, ":pseudo" => $pseudo, ":mdp" => $mdp));
 
-			//Vérifie si le cookie de préférence linguistique est défini
-			if (isset($_COOKIE['language_preference'])) {
-                // Redirige vers la version correspondante de la page d'admin
-                if ($_COOKIE['language_preference'] === "En") {
-                    header("Location: ../Admin/admin_EN.php");
-                    exit();
-                }
-            }
-            else{
-                header("Location:../Admin/admin.php");
-            }
+			
+			header("Location:../Admin/admin.php");
 			exit();
 		} catch (Exception $e) {
 			die("Erreur : " . $e->getMessage());
 		}
 
 	}
-	
-
 ?>
 
 

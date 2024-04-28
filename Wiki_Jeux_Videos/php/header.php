@@ -47,6 +47,7 @@
 		</ul>
 		
 		<?php
+		//Vérifie si authentifié, si c'est le cas permet d'accéder au profil
 			if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true){ // si un utilisateur est authentifié
 		?>
 		<div class="connexion">

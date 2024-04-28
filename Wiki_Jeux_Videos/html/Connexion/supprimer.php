@@ -5,7 +5,7 @@
 
             $identifiant = $_GET["identifiant"];
             
-            // Sélectionne les informations du compte correspondant à l'identifiant
+            // Supprime les informations du compte correspondant à l'identifiant
             $reqPrep = "DELETE FROM account WHERE Courriel = :identifiant";
             $req = $conn->prepare($reqPrep);
             $req->execute(array(":identifiant" => $identifiant));
@@ -25,6 +25,7 @@
         } catch (Exception $e) {
             die("Erreur : " . $e->getMessage());
         }
+        // Redirige vers la page d'administration après la suppression du compte
         header("Location:../Admin/admin.php");
     }
-?>  
+?>

@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	// Vérifie si l'utilisateur est authentifié
 	if(isset($_SESSION["authentifie"]) && $_SESSION["authentifie"] == true){
 		$email = $_SESSION["nom"];
 		try{
@@ -23,13 +24,16 @@
 				exit(); // Assure que le script s'arrête après la redirection
 			}
 		} catch(Exception $e){
+			// Gestion des erreurs
 			die("Erreur : " . $e->getMessage());
 		}
 	}
 	else{
+		// Redirige l'utilisateur vers la page d'accueil s'il n'est pas authentifié
 		header("Location:../Accueil/accueil.php"); 
 	}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">

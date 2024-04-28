@@ -1,18 +1,22 @@
 <footer>
-
+        <!-- Section "Nous contacter" -->
         <div class="contacter">
             <h3>Contact Us</h3>
             <h3>Tel: 07 69 09 42 32</h3>
             <?php
+            // Vérifie si l'utilisateur est authentifié
             if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true){
+                // Si oui, affiche le lien vers le formulaire de contact connecté en français
                 echo"<h4> <a class='contact' href='../Contact/contact_connected_EN.php'>Contact Us</a> </h4>";
             }
             else{
+                // Sinon, affiche le lien vers le formulaire de contact en français
                 echo" <h4> <a class='contact' href='../Contact/contact_EN.php'>Contact Us</a></h4>";
             }
             ?>
         
         </div>
+
         <div class="a_propos">
             <h3>            
                 <?php 
@@ -26,6 +30,7 @@
             
             <h3>            
                 <?php 
+                // Vérifie si l'utilisateur est authentifié
                 if(!isset($_SESSION["authentifie"]) || $_SESSION["authentifie"] == false){
                     echo 'Junia Site';
                 }else{
@@ -35,9 +40,12 @@
             </h3>
             <h4>            
                 <?php 
+                // Vérifie si l'utilisateur est authentifié
                 if(!isset($_SESSION["authentifie"]) || $_SESSION["authentifie"] == false){
+                    // Si non authentifié, affiche le lien vers la présentation en français
                     echo '<a class="prop" href="https://www.junia.com/fr/formations-admissions/prepa-classes-preparatoires-ingenieur/prepa-informatique-reseaux/">Presentation</a>';
                 }else{
+                    // Sinon, affiche le lien vers le formulaire de commentaire en français
                     echo '<a class="contact" href="../Contact/commentaire_EN.php">Comment</a>';
                 }
                 ?></h4>
@@ -82,7 +90,7 @@
             echo "<!-- Erreur lors de la création du cookie -->";
         }
     }
-    
+    // Si le cookie des cookies n'a pas été accepté, affiche le pop-up
     if (!$cookie_accepted) {
         echo '
         <div id="cookie-popup" class="cookie-popup">

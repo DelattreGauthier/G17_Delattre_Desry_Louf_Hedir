@@ -1,12 +1,13 @@
 <?php
 	session_start();
+	// Vérifie si l'utilisateur est authentifié
 	if(isset($_SESSION["authentifie"]) && $_SESSION["authentifie"] == true){
 		$email = $_SESSION["nom"];
 		try{
 			// Connexion à la base de données
 			require("../Connexion/connexion.php");  
 			// Vérification de la méthode POST
-			if (isset($_POST[''])) {
+			if (isset($_POST['Envoyer'])) {
 				// Récupération des données du formulaire
 				$demande = $_POST["objet"];
 				$message = $_POST["description"];
@@ -23,13 +24,16 @@
 				exit(); // Assure que le script s'arrête après la redirection
 			}
 		} catch(Exception $e){
+			// Gestion des erreurs
 			die("Erreur : " . $e->getMessage());
 		}
 	}
 	else{
+		// Redirige l'utilisateur vers la page d'accueil en anglais s'il n'est pas authentifié
 		header("Location:../Accueil/accueil_EN.php"); 
 	}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

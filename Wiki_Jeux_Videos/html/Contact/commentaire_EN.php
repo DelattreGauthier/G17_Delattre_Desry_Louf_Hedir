@@ -1,13 +1,15 @@
 <?php
     session_start();
-    if(!isset($_SESSION["authentifie"]) || $_SESSION["authentifie"]==false){
-        header("Location:../Accueil/accueil_EN.php"); 
+    // Vérifie si l'utilisateur n'est pas authentifié, puis le redirige vers la page d'accueil en anglais
+    if (!isset($_SESSION["authentifie"]) || $_SESSION["authentifie"] == false) {
+        header("Location:../Accueil/accueil_EN.php");
         exit(); // Assure que le script s'arrête après la redirection
     }
 
-    // Vérifie si le cookie de préférence linguistique est défini
-    if(!isset($_COOKIE['language_preference'])) {
+    // Vérifie si le cookie de préférence linguistique n'est pas défini
+    if (!isset($_COOKIE['language_preference'])) {
 ?>
+    <!-- Affiche le sélecteur de langue si le cookie de préférence linguistique n'est pas défini -->
     <div class="language">
         <a href="../Contact/commentaire.php" class="photo_language">
             <div class="photo_language">
@@ -19,9 +21,9 @@
     }
 
     // Vérifie si le formulaire a été soumis
-    if(isset($_POST["Envoyer"])){
+    if (isset($_POST["Envoyer"])) {
         // Vérifie si le commentaire a été saisi
-        if(isset($_POST["description"])){
+        if (isset($_POST["description"])) {
             // Récupère l'adresse e-mail de l'utilisateur à partir de la session
             $courriel = $_SESSION["nom"];
             // Récupère le commentaire saisi dans le formulaire
@@ -53,6 +55,7 @@
         }
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
