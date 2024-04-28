@@ -2,12 +2,13 @@
     <div class="contacter">
         <h3>Nous contacter</h3>
         <h3>Tel: 07 69 09 42 32</h3>
-        <h4><a class="contact" href=<?php 
+        <h4><a class="contact" <?php 
         if(!isset($_SESSION["authentifie"]) || $_SESSION["authentifie"] == false){
-            echo"../Contact/contact.php";
+            echo"href='../Contact/contact.php'>Nous contacter</a>";
         }else{
-            echo"../Contact/contact_connected.php";
-        }?>>Nous contacter</a></h4>
+            echo"href='../Contact/commentaire.php'>Commentaire</a>";
+        }
+        ?></h4>
     </div>
     <div class="a_propos">
         <h3>A propos de nous</h3>
