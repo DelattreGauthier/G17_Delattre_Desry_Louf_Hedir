@@ -86,7 +86,7 @@
 
                 <label for="motdepasse">Mot de Passe : </label>
                 <input type="text" name="motdepasse" id="motdepasse" placeholder="Votre mot de passe" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" required>
-                <p style="text-align: center;">Si vous avez oublié votre mot de passe, <a class="probleme" href="../Connexion/recupmdp.php">cliquez ici</a> pour le récupérer </p>
+                <p style="text-align: center;">Si vous avez oublié votre mot de passe, <a class="probleme" href="../Contact/contact.php">cliquez ici</a> pour le récupérer </p>
                 <br>
 
                 <div class="contact_button">

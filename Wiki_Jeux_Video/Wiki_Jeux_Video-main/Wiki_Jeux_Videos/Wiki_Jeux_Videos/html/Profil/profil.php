@@ -1,6 +1,8 @@
 <?php
+
 	session_start();
 	if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true){
+		setcookie('language_preference', 'Fr', time() + (3600 * 24 * 365), '/');
 		$courriel = $_SESSION["nom"];
 		try{
 			// Connexion à la base de données
@@ -37,20 +39,15 @@
 		<!-- En-tête de la page -->
 		<?php  include ('../../php/header.php'); ?>
 		<!-- Sélecteur de langue -->
-		<?php
-			// Vérifie si le cookie de préférence linguistique est défini
-				if(!isset($_COOKIE['language_preference'])) {
-			?>
-				<div class="language">
-					<a href="../Profil/profil_EN.php" class="photo_language">
-						<div class="photo_language">
-							<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
-						</div>
-					</a>
+
+		<div class="language">
+			<a href="../Profil/profil_EN.php" class="photo_language">
+				<div class="photo_language">
+					<img src="../../photo/FonctionnementduSite/photo-language.png" alt="Language">
 				</div>
-			<?php
-				}
-			?>
+			</a>
+		</div>
+
 
 		<!-- Contenu principal -->
 		<main>
@@ -99,7 +96,7 @@
 						echo "<h2>Vos commentaires :</h2>";
 						echo "<ul>";
 						foreach ($resultats as $comment) {
-							echo "<li>Commentaire #" . $comment['Id'] . " : " . $comment['Comment'] . "</li>";
+							echo "<li>". $comment['Comment'] . "</li>";
 							echo"<br>";
 						}
 						echo "</ul>";

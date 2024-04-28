@@ -74,7 +74,7 @@
           
                 <label for="description">Message <span style="color: red; font-weight: bold;">*</span>:</label>
                 <br>
-                <textarea rows="10" cols="50" name="description" id="description" required minlength="50"></textarea>
+                <textarea rows="10" cols="50" name="description" id="description" required minlength="10"></textarea>
                 <br><br>
                 
                 <div class="contact_button">

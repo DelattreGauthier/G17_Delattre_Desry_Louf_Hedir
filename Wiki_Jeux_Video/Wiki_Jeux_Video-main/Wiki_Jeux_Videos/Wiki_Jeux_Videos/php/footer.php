@@ -1,19 +1,45 @@
 <footer>
-    <div class="contacter">
+<div class="contacter">
         <h3>Nous contacter</h3>
         <h3>Tel: 07 69 09 42 32</h3>
-        <h4><a class="contact" <?php 
-        if(!isset($_SESSION["authentifie"]) || $_SESSION["authentifie"] == false){
-            echo"href='../Contact/contact.php'>Nous contacter</a>";
-        }else{
-            echo"href='../Contact/commentaire.php'>Commentaire</a>";
+        <?php
+        if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true){
+            echo"<h4> <a class='contact' href='../Contact/contact_connected.php'>Nous contacter</a> </h4>";
         }
-        ?></h4>
+        else{
+            echo" <h4> <a class='contact' href='../Contact/contact.php'>Nous contacter</a></h4>";
+        }
+        ?>
+       
     </div>
     <div class="a_propos">
-        <h3>A propos de nous</h3>
-        <h3>Site Junia</h3>
-        <h4><a class="prop" href="https://www.junia.com/fr/formations-admissions/prepa-classes-preparatoires-ingenieur/prepa-informatique-reseaux/">Présentation</a></h4>
+        <h3>            
+            <?php 
+            if(!isset($_SESSION["authentifie"]) || $_SESSION["authentifie"] == false){
+                echo 'A propos de nous';
+            }else{
+                echo 'Commentaires';
+            }
+            ?>
+        </h3>
+        
+        <h3>            
+            <?php 
+            if(!isset($_SESSION["authentifie"]) || $_SESSION["authentifie"] == false){
+                echo 'Site Junia';
+            }else{
+                echo 'Formulaire';
+            }
+            ?>
+        </h3>
+        <h4>            
+            <?php 
+            if(!isset($_SESSION["authentifie"]) || $_SESSION["authentifie"] == false){
+                echo '<a class="prop" href="https://www.junia.com/fr/formations-admissions/prepa-classes-preparatoires-ingenieur/prepa-informatique-reseaux/">Présentation</a>';
+            }else{
+                echo '<a class="contact" href="../Contact/commentaire.php">Commentaire</a>';
+            }
+            ?></h4>
     </div>
 
     <?php
