@@ -1,3 +1,13 @@
+<?php
+// Vérifie si le cookie de préférence linguistique est défini
+if (isset($_COOKIE['language_preference'])) {
+    // Redirige vers la version correspondante de la page d'accueil
+    if ($_COOKIE['language_preference'] === "Fr") {
+        header("Location: ../Accueil/accueil.php");
+        exit();
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

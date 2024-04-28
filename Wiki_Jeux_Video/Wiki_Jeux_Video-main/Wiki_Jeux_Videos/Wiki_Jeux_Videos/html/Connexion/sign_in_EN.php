@@ -32,31 +32,27 @@
             <fieldset>  <!-- la balise fieldset peut être utilisé pour regrouper un ensemble de champs -->
                 <legend>Sign in :</legend>
                 <label for="nom">Last Name<span style="color: red; font-weight: bold;">*</span> :</label >
-                <input type="text" name="nom" id="nom"  minlength="2" pattern="^[\p{L}\-' ]{1,40}$" placeholder="Your last name" required>
+                <input type="text" name="nom" id="nom" maxlength="20" minlength="2" pattern="^[\p{L}\-' ]{1,40}$" placeholder="Your last name" required>
                 <br><br>
 
                 <label for="prenom">First Name<span style="color: red; font-weight: bold;">*</span> :</label >
-                <input type="text" name="prenom" id="prenom"  minlength="2" pattern="^[\p{L}\-' ]{1,40}$" placeholder="Your first name" required>
+                <input type="text" name="prenom" id="prenom" maxlength="20" minlength="2" pattern="^[\p{L}\-' ]{1,40}$" placeholder="Your first name" required>
                 <br><br>
                 
                 <label for="email">Mail<span style="color: red; font-weight: bold;">*</span> : </label >
-                <input type="email" name="courriel" id="email" pattern="^[a-zA-Z0-9.\-]+@[a-zA-Z.]*(\.[a-z]{2,3})$" placeholder="Your mail" required>
+                <input type="email" name="courriel" id="email" maxlength="50" pattern="^[a-zA-Z0-9.\-]+@[a-zA-Z.]*(\.[a-z]{2,3})$" placeholder="Your mail" required>
                 <br><br>
 
                 <label for="telephone">Phone Number<span style="color: red; font-weight: bold;">*</span> : </label>
-                <input type="tel" name="telephone" id="telephone" pattern="^0[0-9]{9}$" placeholder="Your phone number" required>
+                <input type="tel" name="telephone" id="telephone" maxlength="10" pattern="^0[0-9]{9}$" placeholder="Your phone number" required>
                 <br><br>
 
                 <label for="pseudonyme">Pseudo<span style="color: red; font-weight: bold;">*</span> :</label>
-                <input type="text" name="pseudonyme" id="pseudonyme" minlength="2" pattern="^[\p{L}\-' ]{1,40}$" placeholder="Your pseudo" required>
+                <input type="text" name="pseudonyme" id="pseudonyme" maxlength="20" minlength="2" pattern="^[\p{L}\-' ]{1,40}$" placeholder="Your pseudo" required>
                 <br><br>
 
                 <label for="motdepasse">Password (More than 8 characters with at least 1 number)<span style="color: red; font-weight: bold;">*</span> :</label>
-                <input type="text" name="motdepasse" id="motdepasse" placeholder="Your password" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" required>
-                <br><br>
-
-                <label for="ville_naissance">Your hometown<span style="color: red; font-weight: bold;">*</span> :</label>
-                <input type="text" name="ville_naissance" id="ville_naissance" placeholder="Your hometown" pattern="^[\p{L}\-' ]{1,40}$" required>
+                <input type="text" name="motdepasse" id="motdepasse" maxlength="20" placeholder="Your password" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" required>
                 <br><br>
 
                 <label for="language_preference">Choose your preferred language<span style="color: red; font-weight: bold;">*</span> :</label>

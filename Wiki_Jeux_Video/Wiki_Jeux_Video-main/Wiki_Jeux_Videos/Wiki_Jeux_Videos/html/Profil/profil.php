@@ -109,7 +109,7 @@
 				if(isset($_SESSION["authentifie"])&& $_SESSION["authentifie"]==true){ // si un utilisateur est authentifié
 					echo"<div class='connexion'>";
 					if(isset($_SESSION["admin"])&& $_SESSION["admin"]==true){
-						echo"<a class='connexion-button' href='../Admin/admin_EN.php'>Base de donnée</a><br>";
+						echo"<a class='connexion-button' href='../Admin/admin.php'>Base de donnée</a><br>";
 					}
 					
 						echo"<a class='connexion-button' href='../Connexion/log_out.php'>Déconnexion</a>";

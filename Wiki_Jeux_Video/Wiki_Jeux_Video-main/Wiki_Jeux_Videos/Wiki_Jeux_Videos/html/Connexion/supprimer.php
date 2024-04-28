@@ -10,12 +10,21 @@
             $req = $conn->prepare($reqPrep);
             $req->execute(array(":identifiant" => $identifiant));
             
-            
-            header("Location:../Admin/admin.php");
-
+			// Vérifie si le cookie de préférence linguistique est défini
+			if (isset($_COOKIE['language_preference'])) {
+                // Redirige vers la version correspondante de la page d'admin
+                if ($_COOKIE['language_preference'] === "En") {
+                    header("Location: ../Admin/admin_EN.php");
+                    exit();
+                }
+            }
+            else{
+                header("Location:../Admin/admin.php");
+            }
             
         } catch (Exception $e) {
             die("Erreur : " . $e->getMessage());
         }
+        header("Location:../Admin/admin.php");
     }
 ?>  

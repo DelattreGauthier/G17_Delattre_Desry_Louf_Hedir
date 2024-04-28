@@ -4,6 +4,7 @@ body {
   color: #ffffff;
   font-family: Arial, sans-serif;
 }
+
 /*style pour le header, cette partie est tjr affiché même lorsque l'on descend dans la page grâce au position:fixed*/
 header {
   padding: 20px;
@@ -17,14 +18,24 @@ header {
   top: 0;
   box-shadow: 0px 5px 5px #010a1f;
 }
+
 table,td,th{
   border: solid; border-collapse:collapse;text-align:center;
 }
+
 .center-content {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
+
+.center-content > table,
+.center-content > h2 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
 .connexion {
   display: block;
   max-width: 140px; 
@@ -33,6 +44,7 @@ table,td,th{
   top: 30%;
 
 }
+
 
 .modifier_button{
   text-align: center;
@@ -78,21 +90,50 @@ table,td,th{
 footer {
   padding-bottom: 10px;
   margin-top: 2%;
-  display:flex;
   justify-content: space-evenly;
   align-items: center; /* Centrer horizontalement */
+  display: grid;
+  grid-template-columns: auto auto; /* Deux colonnes de largeur automatique */
+  grid-template-rows: auto auto; /* Deux lignes de hauteur automatique */
+  align-items: center;
 }
+
 iframe {
 	border: 0;
 }
+
+
 .contacter {
-  grid-row: 4/5;
-  grid-column: 1/2;
+  grid-row: 1/2; /* Affichage sur la première ligne */
+  grid-column: 1/2; /* Affichage sur la première colonne */
+  text-align: center;
+  display: flex; /* Utilisation d'un conteneur flex */
+  flex-direction: column; /* Alignement des éléments en colonne */
+  align-items: center; /* Alignement des éléments au centre horizontalement */
+}
+
+.contacter,
+.a_propos {
+  margin-bottom: 10px; /* Ajustez cette valeur pour définir l'espace désiré */
 }
 
 .a_propos {
-  grid-row: 4/5;
-  grid-column: 1/3;
+  grid-row: 1/2; /* Affichage sur la première ligne */
+  grid-column: 2/3; /* Affichage sur la deuxième colonne */
+  text-align: center;
+  display: flex; /* Utilisation d'un conteneur flex */
+  flex-direction: column; /* Alignement des éléments en colonne */
+  align-items: center; /* Alignement des éléments au centre horizontalement */
+}
+
+#Commentaire_footer {
+  grid-row: 2/3; /* Affichage sur la deuxième ligne */
+  grid-column: 1/3; /* Occupant les deux colonnes */
+}
+
+.contacter h3,
+.contacter h4 {
+  margin-bottom: 5px; /* Espace en bas pour les titres */
 }
 
 .contacter h3,
@@ -117,10 +158,9 @@ iframe {
   color: white;
 }
 
-.contacter h4,
-.a_propos h4 {
+.a_propos h4, .contacter h4 {
   text-align: center; /* Centre le texte des éléments h4 */
-  width: 100%; /* Éventuellement, ajuste la largeur pour centrer */
+  width: 55%; /* Éventuellement, ajuste la largeur pour centrer */
   display: block;
   padding: 2px; /* Ajuste l'espacement à l'intérieur des boîtes */
   border-radius: 20px;
@@ -129,14 +169,13 @@ iframe {
   cursor: pointer; /* Change le curseur pour indiquer l'interactivité */
 }
 
+
 .contacter h4:hover,
 .a_propos h4:hover {
   border-radius: 30px; /* Augmente le rayon de la bordure */
   background-color: #FF595A; /* Change la couleur de fond au survol */
 }
-.a_propos{
-  width: 10em;
-}
+
 
 /*style pour les titres h1*/
 h1 {
@@ -763,21 +802,22 @@ label[for=videoToggle]:hover {
 
 }
 
-/* Styles pour le pop-up des cookies */
 .cookie-popup {
   position: fixed;
-  bottom: 20px;
+  bottom: 5%;
+  right: 10%;
+  left: 10%;
   background-color:#FF595A;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cookie-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   text-align: center;
 }
 

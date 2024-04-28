@@ -40,7 +40,17 @@
 			$req = $conn->prepare($reqPrep);
 			$req->execute(array(":nom" => $nom, ":prenom" => $prenom, ":courriel" => $courriel, ":tel" => $tel, ":pseudo" => $pseudo, ":mdp" => $mdp));
 
-			header("Location: ../Admin/admin.php");
+			//Vérifie si le cookie de préférence linguistique est défini
+			if (isset($_COOKIE['language_preference'])) {
+                // Redirige vers la version correspondante de la page d'admin
+                if ($_COOKIE['language_preference'] === "En") {
+                    header("Location: ../Admin/admin_EN.php");
+                    exit();
+                }
+            }
+            else{
+                header("Location:../Admin/admin.php");
+            }
 			exit();
 		} catch (Exception $e) {
 			die("Erreur : " . $e->getMessage());
@@ -64,7 +74,7 @@
   
   <body>
 		<!-- En-tête de la page -->
-		<?php  include ('../../php/header.php'); ?>
+		<?php include ('../../php/header.php');?>
 		<!-- Sélecteur de langue -->
 		<?php
 			// Vérifie si le cookie de préférence linguistique est défini
@@ -92,19 +102,19 @@
 							<input type="hidden" name="courriel"  value="<?php echo $affichage['Courriel']; ?>">
 
 							<label for="nom">Nom : </label>
-							<input type="text" id="nom" name="nom" pattern="^[\p{L}\-' ]{1,40}$" value="<?php echo $affichage['Nom']; ?>"><br/>
+							<input type="text" id="nom" maxlength="20" name="nom" pattern="^[\p{L}\-' ]{1,40}$" value="<?php echo $affichage['Nom']; ?>"><br/>
 							
 							<label for="prenom">Prénom : </label>
-							<input type="text" id="prenom" name="prenom" pattern="^[\p{L}\-' ]{1,40}$" value="<?php echo $affichage['Prenom']; ?>"><br/>
+							<input type="text" id="prenom" maxlength="20" name="prenom" pattern="^[\p{L}\-' ]{1,40}$" value="<?php echo $affichage['Prenom']; ?>"><br/>
 							
 							<label for="telephone">Téléphone : </label>
-							<input type="tel" id="telephone" name="telephone"  pattern="^0[0-9]{9}$" value="<?php echo $affichage['Telephone']; ?>"><br/>
+							<input type="tel" id="telephone" maxlength="10" name="telephone"  pattern="^0[0-9]{9}$" value="<?php echo $affichage['Telephone']; ?>"><br/>
 
 							<label for="pseudo">Pseudo : </label>
-							<input type="text" id="pseudo" name="pseudonyme" pattern="^[\p{L}\-' ]{1,40}$" value="<?php echo $affichage['Pseudonyme']; ?>"><br/>
+							<input type="text" id="pseudo" maxlength="20" maxlength="20" name="pseudonyme" pattern="^[\p{L}\-' ]{1,40}$" value="<?php echo $affichage['Pseudonyme']; ?>"><br/>
 
 							<label for="password">Mot de passe : </label>
-							<input type="password" id="mdp" name="motdepasse" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" value="<?php echo $affichage['Mot_de_Passe']; ?>"><br/>
+							<input type="password" id="mdp" maxlength="20" name="motdepasse" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" value="<?php echo $affichage['Mot_de_Passe']; ?>"><br/>
 								
 							<input class="modifier_button" type="submit" name="modifier" value="✅">
 
